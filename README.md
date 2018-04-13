@@ -1,2 +1,5 @@
-# BCH-paper-wallet
-The Bitcoin.com branded paper wallet for Bitcoin Cash
+# Bitcoin.com Paper Wallet
+
+The Bitcoin.com Paper Wallet Landing Page
+
+Custom coded framework
