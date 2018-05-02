@@ -1,0 +1,35 @@
+{
+  "name": "bitaddress.org",
+  "version": "3.3.0",
+  "sha1sum": "6cc839a9f60196e3c5e1ddf6cb9e49ce2ae85cb7",
+  "sha256sum": "dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194",
+  "description": "Open Source JavaScript Client-Side Bitcoin Wallet Generator",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-combine": "~0.8.3",
+	"grunt-lineending": "~0.2.4"
+  },
+  "devDependencies": {
+	"grunt": "~0.4.1",
+    "grunt-combine": "~0.8.3",
+    "grunt-lineending": "~0.2.4"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pointbiz/bitaddress.org.git"
+  },
+  "keywords": [
+    "bitcoin address wallet generator"
+  ],
+  "author": "pointbiz",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "d77aaf687fca1f0e28388b0a8de5eb3d89d4fad3",
+  "bugs": {
+    "url": "https://github.com/pointbiz/bitaddress.org/issues"
+  }
+}
