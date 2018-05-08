@@ -45,7 +45,7 @@
 	GitHub Repository: https://github.com/pointbiz/bitaddress.org
 	-->
 
-	<title>bitaddress.org</title>
+	<title>Bitcoin Cash (BCH) Paper Wallet | Bitcoin.com</title>
 	<meta charset="utf-8">
 
 	<script type="text/javascript">
@@ -6357,11 +6357,38 @@ Bitcoin.Util = {
 })();
 	</script>
 	<style type="text/css">
+
+#paperHeader {
+	background:url(img/wallet-header.jpg);
+	background-size:cover;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #fff;
+  line-height: 3.0em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+header h1 span {
+  display: inline-block;
+  padding: 1em 0em 1em 0.5em;
+}
+header h1 svg {
+  width: 1.5em;
+  height: 1.5em;
+  fill: #fab915;
+  vertical-align: middle;
+  position: relative;
+  top: -0.125em;
+}
+
 .more { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDEvMDIvMTLltnQyAAAB1UlEQVQ4jYWTS04bQRCGv3q0x8gMYJCwknCGLDgLVwiH4grhLFaUXdhkQ0A8pBg/FOLpnmbhMYzxRKlNS1Vdf/31V5XknGnb+eXJCBjzbzu9OLu+azu845Opysej4wHmshF4uJ2TUrb3CV0gIBAKRboC5C2vdkDE9fdty6/xDegvXz+NgDbFUejZ+PjDgExmtpxS9vYwMe5u5iyX8RRoa5Ic+C4qx9KUN1MGu4E618yqJ5axAp44KA7ZL3eYzp/HKdVIw7WK8d6BuDvcod9TQlBEIOXEdPlElSoUJabIIs4Z7h9yNDwgqOMayLXw7epHVIBggrsgspZPUBQyiCgugRQji7TAVDF1XB2TlQoOYCqovkmpopS9fcoiM3ue0rOCYf8IU8NklWxiiOQ3EPXtWagIqo6KYWYEc4IGvMViA6RrnCJKVS9B8ypRHG1YKNa0Ur+C+MPt/I2BKWVZUO4FgvQ47PcptEDF+T2Z8TiZUMWIyGtpd+Bze5VTSqP57O/4YG+AN/RXbSiPkwmL5z/be/L+mM4vT2JKeUW7EXD1erMz/Lo4u77f0K9DDhdA1XG11jh9vWBb99Z9gAg5QZ2hzpmUa0RSW4f/gqSY0s3Vz+tufEjvHS8Tg6BXC7qVbQAAAABJRU5ErkJggg==)
 			no-repeat left center; width: 17px; height: 17px; display: inline-block; float: right; cursor: pointer; }
 .less { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDEvMDIvMTLltnQyAAABuklEQVQ4ja2US25TQRBFT336OSEY5ESyBfEakNiLt0AW5S2QvQQxAiZIYBwSz/yByH7dxcB2bPMME+hJS/W5fetWVUtE8K/HfzdcXfdfqsr4onuGuRz4Jrdzcg6Gg9HfQYAxAqmlSMMlQJO5/oliE4AtQLcR++btZQ+wPVsvVXbTfXFGEMyWU9rVM0yMu/Gc5bJ+DdztxWcH3otKVzbPmyq5LnwfzSgEBMxlhqJEBFWVKKUgG66rur53oH7aOeWkUlJSRCBHZracssorlLXttHpCpzonaYukjmsiivDu08daAZIJ7oLIVg9BUQgQUVwSua5Z5AWmiqnj6pisVXAAU0F1J6WK0q6e024Fs4cplbXonFxgapisk00MkdiBqDd7oSKoOiqGmZHMSZrwPRYHIMfaKaKsyhI01oni6IaFYptSyiOIT27nOwaq5FyQrUAIC/nBhK+UErRSos55z4878CrneJyTnHOvquymf3mOb+hvy/jw+QuLh5/NORkORvsGrq77dc6xpr0RcH07y3oF8G04GN0f6HdEDhdA1XG1vXb6dsAa+3Z8AREiQwkoEeQoiBzocHDkf/wnvwC5IpRVsUDNUgAAAABJRU5ErkJggg==)
 			no-repeat left center; width: 17px; height: 17px; display: inline-block; float: right; }
-a { position: relative; z-index: 20; }
+a { position: relative; z-index: 20; color:#fab915;}
 .right { text-align: right; }
 .walletarea { display: none;}
 hr { margin: 20px 0; border-top: 2px dashed #008000; }
@@ -6375,7 +6402,7 @@ hr { margin: 20px 0; border-top: 2px dashed #008000; }
 .keyarea .qrcode_private { display: inline-block; position: relative; top: 28px; float: right; }
 .pubkeyhex { word-wrap: break-word; }
 body { font-family: Montserrat, sans-serif; }
-body, html { height: 99%; }
+body, html { height: 99%; margin:0;}
 .faqs ol { padding: 0 0 0 25px; }
 .faqs li { padding: 3px 0; }
 .question { padding: 10px 15px; text-align: left; cursor: pointer; }
@@ -6390,9 +6417,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #seedpoolarea { display: none; }
 #seedpooldisplay {  font-family: monospace; font-size: 1em; width: 640px; padding: 15px 5px; word-wrap: break-word; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: #fab915; position: absolute; z-index: 10; }
-#generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; border: 2px solid #fab915; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; clear: both; }
+#generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; background-color:#eeeeee; border-radius:5px; clear: both; }
 #generate span { padding: 5px 5px 0 5px; }
-#generatekeyinput { position: relative; z-index: 20; }
+#generatekeyinput { position: relative; z-index: 20; border: 2px solid #000000; border-radius: 5px;}
 #keyarea { height: 250px; border: 2px solid #fab915; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top:none;}
 #keyarea .pubaddress { float: none; display: block; padding: 0; height: auto; }
 #keyarea .label { text-decoration: none; }
@@ -6573,7 +6600,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	.expandable { padding: 10px 15px; text-align: left; cursor: pointer; }
 
     #menu { visibility: visible; font-size: 90%; }
-    #culturemenu { text-align: center; padding: 0 10px 5px 10px; margin-bottom: 3px; font-size: 90%; }
+    #culturemenu { text-align: center; padding: 12px 10px 5px 10px; margin-bottom: 3px; font-size: 90%; }
     #culturemenu span { padding: 3px; }
     #culturemenu .selected { text-decoration: none; color: #000000; }
     .culturemenurow { padding: 2px 0; }
@@ -6639,11 +6666,40 @@ input[type=checkbox] { position: relative; z-index: 20; }
 
 </head>
 <body onclick="SecureRandom.seedTime();" onmousemove="ninja.seeder.seed(event);">
+	<header id="paperHeader">
+		<h1>
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.2387695px" height="70.4990234px" viewBox="0 0 58.2387695 70.4990234" enable-background="new 0 0 58.2387695 70.4990234" xml:space="preserve">
+		<path d="M57.7895508,18.8398438L39.3989258,0.4487305C39.1098633,0.1616211,38.7202148,0,38.3139648,0H4.597168
+			C2.0620117,0,0,2.0629883,0,4.5976563v61.3027344c0,2.5361328,2.0620117,4.5986328,4.597168,4.5986328h49.0429688
+			c2.5351563,0,4.5986328-2.0625,4.5986328-4.5986328V19.9238281C58.2387695,19.5180664,58.0766602,19.1279297,57.7895508,18.8398438
+			 M39.847168,5.2329102L53.0053711,18.390625H39.847168V5.2329102z M53.6401367,67.4335938H4.597168
+			c-0.8447266,0-1.5317383-0.6875-1.5317383-1.5332031V4.5976563c0-0.8447266,0.6870117-1.5327148,1.5317383-1.5327148h32.1845703
+			v16.8588867c0,0.8461914,0.6865234,1.5322266,1.5322266,1.5322266h16.859375v44.4443359
+			C55.1733398,66.7460938,54.4848633,67.4335938,53.6401367,67.4335938"></path>
+		<path d="M10.7280273,26.0541992h18.390625c0.8461914,0,1.5332031-0.6860352,1.5332031-1.5332031
+			c0-0.8457031-0.6870117-1.5317383-1.5332031-1.5317383h-18.390625c-0.8461914,0-1.5332031,0.6860352-1.5332031,1.5317383
+			C9.1948242,25.3681641,9.8818359,26.0541992,10.7280273,26.0541992"></path>
+		<path d="M47.5102539,32.1845703H10.7280273c-0.8461914,0-1.5332031,0.6860352-1.5332031,1.5327148
+			c0,0.8461914,0.6870117,1.5322266,1.5332031,1.5322266h36.7822266c0.8457031,0,1.5332031-0.6860352,1.5332031-1.5322266
+			C49.043457,32.8706055,48.355957,32.1845703,47.5102539,32.1845703"></path>
+		<path d="M47.5102539,41.3798828H10.7280273c-0.8461914,0-1.5332031,0.6855469-1.5332031,1.5332031
+			c0,0.8457031,0.6870117,1.53125,1.5332031,1.53125h36.7822266c0.8457031,0,1.5332031-0.6855469,1.5332031-1.53125
+			C49.043457,42.0654297,48.355957,41.3798828,47.5102539,41.3798828"></path>
+		<path d="M47.5102539,50.5751953H10.7280273c-0.8461914,0-1.5332031,0.6865234-1.5332031,1.5332031
+			c0,0.8457031,0.6870117,1.5322266,1.5332031,1.5322266h36.7822266c0.8457031,0,1.5332031-0.6865234,1.5332031-1.5322266
+			C49.043457,51.2617188,48.355957,50.5751953,47.5102539,50.5751953"></path>
+		</svg>
+			<span>Bitcoin Cash (BCH) Paper Wallet</span>
+		</h1>
+	</header>
 	<div id="busyblock"></div>
-	<div id="main">		
+	<div id="main">
+		<div id="user-alert">
+			<h2>Move your mouse to generate a Bitcoin Cash (BCH) address</h2>
+		</div>
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
-		<ul class="menu" id="menu">
+		<ul class="menu" id="menu" style="visibility:hidden;">
 			<li class="tab invisible" id="singlewallet" onclick="ninja.tab.select(this);">Single Wallet
 			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
@@ -6655,8 +6711,8 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		</ul>		
 		
 		<div id="generate">
-			<span id="generatelabelbitcoinaddress">Generating Bitcoin Address...</span><br />
-			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br />
+			<span id="generatelabelbitcoinaddress">Generating Bitcoin Cash (BCH) Address...</span><br /><br />
+			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br /><br />
 			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
 		</div>
@@ -9789,6 +9845,8 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 			}
 			document.getElementById("singlearea").style.display = "block";
 			document.getElementById("singlePrintTop").style.visibility = "visible";
+			document.getElementById("menu").style.visibility = "visible";
+			document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
 		},
 
 		close: function () {
@@ -11904,5 +11962,9 @@ if (ninja.getQueryString()["showseedpool"] == "true" || ninja.getQueryString()["
 	document.getElementById("seedpoolarea").style.display = "block";
 }
 	</script>
+	<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='bcb14c00c5c15200a12099009a4ed3006f7baf006a28ff001fb49d00e1c0f700';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+	<script>var BitcoinMenuWidth = 1400;</script>
+  <script type="text/javascript" src="https://menu.cdn.bitcoindotcom.net/the-footer/dist/universal-footer.js"></script>
+  <script src="https://menu.cdn.bitcoindotcom.net/the-menu/dist/universal-menu.js"></script>
 </body>
 </html>
