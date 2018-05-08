@@ -11,46 +11,8 @@ bitcoin.com paper wallet style sheet
 
 
 
-@font-face {
-    font-family: 'museo_sans_rounded900';
-    src: url('fonts/museosansrounded-900.svg') format('svg'),
-    	 url('fonts/museosansrounded-900.ttf') format('ttf'),
-    	 url('fonts/museosansrounded-900.woff2') format('woff2'),
-         url('fonts/museosansrounded-900.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo_sans_rounded300';
-    src: url('fonts/museosansrounded-300.svg') format('svg'),
-    	 url('fonts/museosansrounded-300.woff2') format('woff2'),
-         url('fonts/museosansrounded-300.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo_sans_rounded500';
-    src: url('fonts/museosansrounded-500.svg') format('svg'),
-    	 url('fonts/museosansrounded-500.woff2') format('woff2'),
-         url('fonts/museosansrounded-500.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'museo_sans_rounded700';
-    src: url('fonts/museosansrounded-700.svg') format('svg'),
-    	 url('fonts/museosansrounded-700.ttf') format('ttf'),
-    	 url('fonts/museosansrounded-700.woff2') format('woff2'),
-         url('fonts/museosansrounded-700.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-	font-family: 'museo_sans_rounded300', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -64,26 +26,51 @@ body {
 }
 
 h1 {
-	font-family: 'museo_sans_rounded700', sans-serif;
-	font-size: 32px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 65px;
 	font-weight: 700; 
-	color: #8b8b8b;
-	margin-bottom: 20px;
-	margin-top: 0;
-}
-
-.h1-white {
 	color: #fff;
+	margin: 0;
 }
 
-h1:after {
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 36px;
+	font-weight: 700; 
+	color: #444;
+	margin: 0;
+	margin-bottom: 28px;
+}
+
+
+h2:after {
     content:' ';
     display:block;
-    border:4px solid #fab915;
+    border:2px solid #fab915;
     color: #fab915;
-    width: 80px;
-    margin-top: 10px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
+	font-weight: 700; 
+	color: #fab915;
+	margin: 0;
+}
+
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 400; 
+	color: #444;
+	margin: 0;
+	line-height: 1.8em;
+}
+
 
 .center-h1 {
 	text-align: center;
@@ -99,36 +86,6 @@ h1:after {
 .center-div {
 	width: 100%;
 	text-align: center;
-}
-
-h2 {
-	font-family: 'museo_sans_rounded300', sans-serif;
-	font-size: 30px;
-	font-weight: 300; 
-	color: #fff;
-	line-height: 26px;
-	margin-bottom: 30px;
-}
-
-h3 {
-	font-family: 'museo_sans_rounded300', sans-serif;
-	font-size: 25px;
-	font-weight: 300; 
-	color: #8b8b8b;
-}
-
-h4 {
-	font-family: 'museo_sans_rounded300', sans-serif;
-	font-weight: 300; 
-	color: #8b8b8b;
-}
-
-p {
-	font-family: 'museo_sans_rounded300', sans-serif;
-	color: #8b8b8b;
-	font-size: 18px;
-	font-weight: 400;
-	margin-bottom: 0;
 }
 
 a, a:hover {
@@ -148,39 +105,39 @@ a, a:hover {
 	background-position: center;
 }
 
-.section-1-p {
-	font-size: 25px;
-	font-weight: 700;
-	color: #fab915;
-	padding: 0;
+.section-1 h1 {
+	margin-bottom: 25px;
+}
+
+.h3-line {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	display: inline-block;
 	padding-bottom: 10px;
-}
-
-.h1-section-1 {
-	font-size: 60pt;
-	font-weight: 700;
-	color: #fff;
-	padding: 0;
+	margin-bottom: 20px;
 }
 
 .btn-primary{
-	font-family: 'museo_sans_rounded500', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700; 
 	color: #fff!important;
 	text-shadow: none!important;
 	-webkit-text-shadow: none!important;
-	border: 2px solid #fab915!important;
-	padding: 15px 40px!important;
+	padding-left: 28px!important;
+	padding-right: 28px!important;
 	font-size: 18px;
-	font-weight: 500;
 	text-align: center;
-	border-radius: 1000px !important;
+	border-radius: 100px !important;
 	background-color: #fab915 !important;
+	height: 50px;
+	min-width: 140px;
+	line-height: 50px;
+	padding-top: 0;
+	padding-bottom: 0;
+	border: none;
 }
 
 .btn-primary:hover {
-	background-color: #f9b017!important;
+	background-color: #E7A603!important;
 	transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
@@ -189,43 +146,22 @@ a, a:hover {
 }
 
 .section-2 {
-	padding: 0px 0 80px 0;
+	padding: 50px 0 50px 0;
     display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
+.paper-wallet-img {
+	width: 100%;
+}
+
 svg.page-hero-shape {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: -1;
     width: 100%;
     margin-top: 0px;
-}
-
-.medium-header {
-	font-size: 40px;
-    font-weight: 700;
-    line-height: 120%;
-    color: #444;
-    margin-bottom: 30px;
-}
-
-.medium-header:after {
-    content:' ';
-    display:block;
-    border:4px solid #fab915;
-    color: #fab915;
-    width: 120px;
-    margin-top: 15px;
-}
-
-.content-p {
-	color: #444;
-	line-height: 1.6em;
-}
-
-.shape-space {
-	margin-top: 10px;
+    top: 0;
 }
 
 .what-is-padding {
@@ -233,39 +169,36 @@ svg.page-hero-shape {
 }
 
 .section-3 {
-	padding: 60px 0 60px 0;
+	padding: 50px 0 50px 0;
 	background-color: #f9f9f9;
 }
 
 .features {
 	text-align: center;
-	padding: 25px;
+	padding: 25px 25px 0px 25px;
 }
 
 .features-h1 {
 	color: #444;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 700;
-}
-
-.features-p {
-	color: #444;
-	line-height: 1.6em;
+	margin-bottom: 12px;
 }
 
 .featured-img {
-	height: 100px;
+	height: 70px;
+	margin-bottom: 20px;
 }
 
 .section-4 {
-	padding: 60px 0 60px 0;
+	padding: 50px 0 50px 0;
 	
 }
 
 .steps {
 	display: inline-block;
 	width: 40px;
-	font-size: 50px;
+	font-size: 40px;
 	padding: 0;
 	vertical-align: middle;
 	border-right: 1px solid #fab915;
@@ -274,24 +207,21 @@ svg.page-hero-shape {
 }
 
 .steps-p {
-	color: #444;
-	line-height: 1.6em;
 	display: inline-block;
-	width: 80%;
+	width: 89%;
 	padding: 0;
 	vertical-align: middle;
 	padding-left: 20px;
 	margin-top: 15px;
 }
 
-.wallet-background {
-	background-image: url(../img/wallet.png);
-	width: 100%;
-	height: 600px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	margin-top: -50px;
+.why-image-div {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.why-image {
+	width: 120px;
 }
 
 .panel a {
@@ -299,9 +229,9 @@ svg.page-hero-shape {
 }
 
 .panel {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 20px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 18px;
 }
 
 .panel-default>.panel-heading {
@@ -310,6 +240,7 @@ svg.page-hero-shape {
 
 .panel-title {
 	font-size: 18px;
+	font-weight: 700;
 }
 
 .panel-body {
@@ -317,30 +248,54 @@ svg.page-hero-shape {
 	font-size: 16px;
 }
 
+body #universal-footer {
+	margin-top: 0 !important;
+}
+
 /***********************************************************************************   START MEDIA    **************************************************************************************/
 
 
 
 @media (max-width: 992px) {
-	
+	.what-is-padding {
+	padding-right: 0px;
+	margin-bottom: 30px;
+}
 
 }
 
 @media (max-width: 768px) {
-   p {
-		font-size: 16px;
+   h1 {
+		font-size: 50px;
 	}
 
-
-	.h1-section-1 {
-	font-size: 40pt;
-	font-weight: 700;
-	line-height: 1.2em;
+	h2 {
+		font-size: 30px;
 	}
 
-	.section-1-p {
-	font-size: 18px;
+	h3 {
+		font-size: 20px;
 	}
+
+	p {
+		font-size: 14px;
+	}
+
+	.steps {
+	margin-top: 30px;
+	width: 30px;
+	font-size: 30px;
+	
+}
+
+.steps-p {
+	margin-top: 30px;
+}
+
+#why-trust, #how-to {
+	margin-top: 50px;
+}
+
 
 }
 
