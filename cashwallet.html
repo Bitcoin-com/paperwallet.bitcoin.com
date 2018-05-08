@@ -6464,7 +6464,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #paperarea { min-height: 120px; display: none; }
 #paperarea .keyarea { border: 2px solid #fab915; border-top: 0; }
 #paperarea .keyarea.art { display: block; height: auto; border: 0; font-family: Ubuntu, Arial; padding: 0; margin: 0; }
-#paperarea .artwallet .papersvg { width: 800px; border: 0; margin: 0; padding: 4px; left: 0; }
+#paperarea .artwallet .papersvg { width: 781px; border: 0; margin: 0; padding: 12px; left: 0; }
 #paperarea .artwallet .qrcode_public { top: 340px; left: 40px; transform: rotate(45deg); -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF; 
 		                                padding: 5px 5px 2px 5px; } 
 #paperarea .artwallet .qrcode_private { top: 398px; left: 679px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF; 
@@ -6587,24 +6587,24 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	
     .pagebreak { height: 50px; }
 	.commands { padding: 10px 2px; margin-bottom: 0; }
-  #newaddress {
+  #newaddress, #papergenerate {
   	margin-top:14px;
   	font-size:18px;
   	border-radius: 5px;
 		background-color: #ffffff;
-		border: 2px solid #a6a6a6a6;
-		color: #a6a6a6;
+		border: 2px solid #666666;
+		color: #666666;
 		padding: 5px;
   }
-  #newaddress:hover {  	
+  #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
-		background-color: #a6a6a6;
+		background-color: #666666;
 		color: #ffffff;
   }
 
 	.commands .row { padding: 0 0; text-align: left; } 
 	.commands .row.extra { padding-top: 6px; }
-	.commands span { padding: 0 10px; }
+	.commands span { padding: 0 5px; }
 	.commands span.print { float: right; position: relative; z-index: 20; }
 	.commands span.right { float: right; }
 	.expandable { padding: 10px 15px; text-align: left; cursor: pointer; }
@@ -6667,6 +6667,13 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	.faq { display: none; }
 }
 
+#paperkeyarea {
+	border: 2px solid #fab915;
+	border-top:none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 	</style>
 
 	<!-- Include Cash Address Support -->
@@ -6710,8 +6717,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
 		<ul class="menu" id="menu" style="display:none;">
-			<li class="tab invisible" id="singlewallet" onclick="ninja.tab.select(this);">Single Wallet
 			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
+			<li class="tab invisible" id="singlewallet" onclick="ninja.tab.select(this);">Single Wallet
+			
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
 			<li class="tab" id="brainwallet" style="display:none;" onclick="ninja.tab.select(this);">Brain Wallet
 			<li class="tab" id="vanitywallet" style="display:none;" onclick="ninja.tab.select(this);">Vanity Wallet
@@ -6779,15 +6787,17 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			<div id="paperarea">
 				<div class="commands">
 					<div id="papercommands" class="row">
-						<span><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
+						<span style="display:none;"><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span>
-						<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
-						<span class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
-					</div>
-					<div id="paperadvancedcommands" class="row extra">
 						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>
 						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span>
-						<span><label id="paperlabeladdressesperpage" for="paperlimitperpage">Addresses per page:</label> <input type="text" id="paperlimitperpage" /></span>
+						<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
+						<span style="display:none;" class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
+					</div>
+					<div id="paperadvancedcommands" class="row extra">
+						
+						
+						<span style="display:none;"><label id="paperlabeladdressesperpage" for="paperlimitperpage">Addresses per page:</label> <input type="text" id="paperlimitperpage" /></span>
 					</div>
 				</div>
 				<div id="paperkeyarea"></div>
@@ -7055,7 +7065,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 			</div>
 
-			<div id="culturemenu">
+			<div id="culturemenu" style="display:none;">
         <div class="culturemenurow">
             <span><a href="?culture=en" id="cultureen" class="selected" onclick="ninja.translator.translate('en'); return false;">English</a></span> |
             <span><a href="?culture=es" id="culturees" onclick="ninja.translator.translate('es'); return false;">Español</a></span> |
@@ -7609,11 +7619,19 @@ ninja.publicKey = {
 		// open selected tab
 		var walletType = ninja.tab.whichIsOpen();
 		if (walletType == null) {
-			ninja.tab.select("singlewallet");
+			//ninja.tab.select("singlewallet");
+			//Default to Paper Wallet
+			ninja.tab.select("paperwallet");
 		} else {
 			ninja.tab.select(walletType)
 		}
 		document.getElementById("generate").style.display = "none";
+
+		document.getElementById("menu").style.display = "block";
+		document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
+		// Hide Progress Bar
+    document.getElementById('progress-bar-border').style.display = 'none';
+
 		// update labels for dependent wallets
 		var culture = (ninja.getQueryString()["culture"] == null ? "en" : ninja.getQueryString()["culture"]);
 		ninja.translator.translate(culture);
@@ -9852,11 +9870,7 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 				single.generateNewAddressAndKey();
 			}
 			document.getElementById("singlearea").style.display = "block";
-			document.getElementById("singlePrintTop").style.visibility = "visible";
-			document.getElementById("menu").style.display = "block";
-			document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
-			// Hide Progress Bar
-      document.getElementById('progress-bar-border').style.display = 'none';
+			document.getElementById("singlePrintTop").style.visibility = "visible";			
 		},
 
 		close: function () {
@@ -9939,7 +9953,7 @@ ninja.wallets.paperwallet = {
 	remaining: null, // use to keep track of how many addresses are left to process when building the paper wallet
 	count: 0,
 	pageBreakAtDefault: 7,
-	pageBreakAtArtisticDefault: 3,
+	pageBreakAtArtisticDefault: 1,
 	useArtisticWallet: true,
 	pageBreakAt: null,
 
