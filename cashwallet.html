@@ -6368,6 +6368,7 @@ header h1 {
   font-size: 2.5em;
   color: #fff;
   line-height: 3.0em;
+  margin:0;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
@@ -6412,14 +6413,28 @@ body, html { height: 99%; margin:0;}
 .button { margin-left: 5px; margin-right: 5px; }
 input[type=checkbox] { position: relative; z-index: 20; }
 
+#progress-bar-border {  
+  margin: 15px 0px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+#progress-bar {  
+  font-size: 20px;    
+  width: 0%;
+  background-color: #fab915;
+  color: #000000;
+  padding:3px;
+  border-radius:5px;
+}
+
 #wallets { clear: both; }
 #btcaddress, #btcprivwif, #detailaddress, #detailaddresscomp, #detailprivwif, #detailprivwifcomp { font-family: monospace; font-size: 1.25em; }
 #seedpoolarea { display: none; }
-#seedpooldisplay {  font-family: monospace; font-size: 1em; width: 640px; padding: 15px 5px; word-wrap: break-word; }
+#seedpooldisplay {  font-family: Montserrat; font-size: 1em; padding: 15px 5px; word-wrap: break-word; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: #fab915; position: absolute; z-index: 10; }
-#generate { font-family: monospace; font-size: 1.25em; height: 305px; text-align: left; position: relative; padding: 5px; background-color:#eeeeee; border-radius:5px; clear: both; }
+#generate { font-family: Montserrat; font-size: 1.25em; text-align: left; position: relative; padding: 5px; background-color:#eeeeee; border-radius:5px; clear: both; }
 #generate span { padding: 5px 5px 0 5px; }
-#generatekeyinput { position: relative; z-index: 20; border: 2px solid #000000; border-radius: 5px;}
+#generatekeyinput { position: relative; z-index: 20; border: 2px solid #000000; border-radius: 5px; background-color:#a6a6a6; color:#ffffff;}
 #keyarea { height: 250px; border: 2px solid #fab915; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top:none;}
 #keyarea .pubaddress { float: none; display: block; padding: 0; height: auto; }
 #keyarea .label { text-decoration: none; }
@@ -6699,7 +6714,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		</div>
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
-		<ul class="menu" id="menu" style="visibility:hidden;">
+		<ul class="menu" id="menu" style="display:none;">
 			<li class="tab invisible" id="singlewallet" onclick="ninja.tab.select(this);">Single Wallet
 			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
@@ -6712,10 +6727,14 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Bitcoin Cash (BCH) Address...</span><br /><br />
-			<span id="generatelabelmovemouse">MOVE your mouse around to add some extra randomness... </span><span id="mousemovelimit"></span><br /><br />
-			<span id="generatelabelkeypress">OR type some random characters into this textbox</span> <input type="text" id="generatekeyinput" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
+			<span id="generatelabelmovemouse">Move your mouse around to add some extra randomness... </span><span style="display:none;" id="mousemovelimit"></span><br /><br />
+			<span id="generatelabelkeypress">OR type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
 		</div>
+
+		<div id="progress-bar-border">
+  		<div id="progress-bar">0%</div>
+  	</div>
 
 		<div id="wallets">
 			<div id="singlearea" class="walletarea">				
@@ -7571,6 +7590,9 @@ ninja.publicKey = {
 		}
 		var percentSeeded = Math.round((ninja.seeder.seedCount / ninja.seeder.seedLimit) * 100) + "%";
 		document.getElementById("mousemovelimit").innerHTML = percentSeeded;
+		// Progress Bar addition
+    document.getElementById("progress-bar").innerHTML = percentSeeded;
+    document.getElementById("progress-bar").style.width = percentSeeded;
 		for (var wIndex in ninja.seeder.seederDependentWallets) {
 			//document.getElementById(ninja.seeder.seederDependentWallets[wIndex]).innerHTML = percentSeeded;
 			// Keep these tabs hidden while the seed is generated
@@ -9845,8 +9867,10 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 			}
 			document.getElementById("singlearea").style.display = "block";
 			document.getElementById("singlePrintTop").style.visibility = "visible";
-			document.getElementById("menu").style.visibility = "visible";
+			document.getElementById("menu").style.display = "block";
 			document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
+			// Hide Progress Bar
+      document.getElementById('progress-bar-border').style.display = 'none';
 		},
 
 		close: function () {
