@@ -6665,6 +6665,23 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	#detailarea .notes { display: none; }
 	#seedpoolarea { display: none; }
 	.faq { display: none; }
+
+	header {display: none !important;}
+	#universal-footer {display: none !important;}
+	#btctm-top {display:none !important;}
+	#menu {display:none !important;}
+	#user-alert {display:none !important;}
+
+  #paperkeyarea {
+		border:none !important;
+	}
+	#paperarea .keyarea {
+		border:none !important;
+	}
+	#keyarea {
+		border:none !important;
+	}
+
 }
 
 #paperkeyarea {
@@ -7631,6 +7648,8 @@ ninja.publicKey = {
 		document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
 		// Hide Progress Bar
     document.getElementById('progress-bar-border').style.display = 'none';
+    //Show Print Button
+    document.getElementById("singlePrintTop").style.visibility = "visible";
 
 		// update labels for dependent wallets
 		var culture = (ninja.getQueryString()["culture"] == null ? "en" : ninja.getQueryString()["culture"]);
@@ -9869,8 +9888,7 @@ ninja.foreachSerialized = function (collection, whatToDo, onComplete) {
 			if (document.getElementById("btcaddress").innerHTML == "") {
 				single.generateNewAddressAndKey();
 			}
-			document.getElementById("singlearea").style.display = "block";
-			document.getElementById("singlePrintTop").style.visibility = "visible";			
+			document.getElementById("singlearea").style.display = "block";						
 		},
 
 		close: function () {
