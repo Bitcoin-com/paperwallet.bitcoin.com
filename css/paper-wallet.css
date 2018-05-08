@@ -36,7 +36,7 @@ h1 {
 h2 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 36px;
-	font-weight: 700; 
+	font-weight: 600; 
 	color: #444;
 	margin: 0;
 	margin-bottom: 28px;
@@ -56,8 +56,8 @@ h2:after {
 
 h3 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 25px;
-	font-weight: 700; 
+	font-size: 22px;
+	font-weight: 600; 
 	color: #fab915;
 	margin: 0;
 }
@@ -181,7 +181,7 @@ svg.page-hero-shape {
 .features-h1 {
 	color: #444;
 	font-size: 25px;
-	font-weight: 700;
+	font-weight: 600;
 	margin-bottom: 12px;
 }
 
@@ -229,9 +229,9 @@ svg.page-hero-shape {
 }
 
 .panel {
-	padding-top: 18px;
-	padding-bottom: 18px;
-	padding-left: 18px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
 }
 
 .panel-default>.panel-heading {
@@ -239,8 +239,8 @@ svg.page-hero-shape {
 }
 
 .panel-title {
-	font-size: 18px;
-	font-weight: 700;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 .panel-body {
