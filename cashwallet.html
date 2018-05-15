@@ -6592,19 +6592,27 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	
     .pagebreak { height: 50px; }
 	.commands { padding: 10px 2px; margin-bottom: 0; }
-  #newaddress, #papergenerate {
-  	margin-top:14px;
-  	font-size:18px;
+  #newaddress, #papergenerate {  	
+  	font-size:42px;
   	border-radius: 5px;
 		background-color: #ffffff;
 		border: 2px solid #666666;
 		color: #666666;
-		padding: 5px;
+		padding: 40px 160px;
   }
   #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
 		background-color: #666666;
 		color: #ffffff;
+  }
+
+  .papersettings {
+  	display:inline-block;
+  	line-height:200%;
+  }
+  .generate-button {
+  	display:inline-block;
+  	float:right;
   }
 
 	.commands .row { padding: 0 0; text-align: left; } 
@@ -6809,11 +6817,17 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			<div id="paperarea">
 				<div class="commands">
 					<div id="papercommands" class="row">
+						<div class="papersettings">
 						<span style="display:none;"><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
-						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span>
-						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>
-						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span>
-						<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
+						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span><br>
+						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span><br>
+						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
+						<span><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
+					</div>
+					<div class="generate-button">						
+							<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
+					</div>
+						
 						<span style="display:none;" class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
 					</div>
 					<div id="paperadvancedcommands" class="row extra">
@@ -10141,10 +10155,15 @@ ninja.wallets.paperwallet = {
 		if (ninja.wallets.paperwallet.encrypt) {
 			keyelement = 'btcencryptedkey'
 			image = 'img/paper-wallet-black.png';
+			if (ninja.wallets.paperwallet.bw) {
+				image = 'img/paper-wallet-white.png';
+			}
+		}
+		else if (ninja.wallets.paperwallet.bw) {
+			image = 'img/paper-wallet-white.png';
 		}
 		else {
 			image = 'img/paper-wallet-black.png';
-
 		}
 
 		var walletHtml =
@@ -10197,6 +10216,12 @@ ninja.wallets.paperwallet = {
 		// enable/disable passphrase textbox
 		document.getElementById("paperpassphrase").disabled = !element.checked;
 		ninja.wallets.paperwallet.encrypt = element.checked;
+		ninja.wallets.paperwallet.resetLimits();
+	},
+
+	// Support B&W wallet
+	toggleColor: function (element) {
+		ninja.wallets.paperwallet.bw = element.checked;
 		ninja.wallets.paperwallet.resetLimits();
 	},
 
