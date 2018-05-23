@@ -6430,11 +6430,11 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #wallets { clear: both; }
 #btcaddress, #btcprivwif, #detailaddress, #detailaddresscomp, #detailprivwif, #detailprivwifcomp { font-family: monospace; font-size: 1.25em; }
 #seedpoolarea { display: none; }
-#seedpooldisplay {  font-family: Montserrat; font-size: 1em; padding: 15px 5px; word-wrap: break-word; }
+#seedpooldisplay {  font-family: Montserrat; font-size: 0.85em; padding: 15px 5px 0 5px; word-wrap: break-word; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: #fab915; position: absolute; z-index: 10; }
-#generate { font-family: Montserrat; font-size: 1.25em; text-align: left; position: relative; padding: 5px; background-color:#eeeeee; border-radius:5px; clear: both; }
+#generate { font-family: Montserrat; font-size: 1.25em; text-align: left; position: relative; padding: 15px; background-color:#eeeeee; border-radius:5px; clear: both; }
 #generate span { padding: 5px 5px 0 5px; }
-#generatekeyinput { position: relative; z-index: 20; border: 2px solid #000000; border-radius: 5px; background-color:#a6a6a6; color:#ffffff;}
+#generatekeyinput { position: relative; z-index: 20; border: 1px solid #000000; border-radius: 2px; background-color:#fff; color:#000; padding: 5px;}
 #keyarea { height: 250px; border: 2px solid #fab915; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top:none;}
 #keyarea .pubaddress { float: none; display: block; padding: 0; height: auto; }
 #keyarea .label { text-decoration: none; }
@@ -6491,7 +6491,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 }
 #paperarea .artwallet .btcencryptedkey
 {
-	position: absolute; top: 263px; left: 14px; z-index: 100; font-size: 10px; background-color: transparent;
+	position: absolute; top: 267px; left: 14px; z-index: 100; font-size: 10px; background-color: transparent;
 	font-weight:bold; color: #ffffff; margin: 0;  
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-45deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-45deg);
@@ -6591,14 +6591,15 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	.menu .tab.selected:hover { color: #000; }
 	
     .pagebreak { height: 50px; }
-	.commands { padding: 10px 2px; margin-bottom: 0; }
+	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; }
   #newaddress, #papergenerate {  	
-  	font-size:42px;
+  	font-size:30px;
   	border-radius: 5px;
 		background-color: #ffffff;
 		border: 2px solid #666666;
 		color: #666666;
-		padding: 40px 160px;
+		padding: 46px 142px;
+		margin-top: 0px;
   }
   #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
@@ -6819,10 +6820,17 @@ input[type=checkbox] { position: relative; z-index: 20; }
 					<div id="papercommands" class="row">
 						<div class="papersettings">
 						<span style="display:none;"><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
+						<span><label id="chooseyourwallet" for="paperIMG">Style:</label>
+							<select id="walletSelector" name="paperIMG" onchange="ninja.wallets.paperwallet.toggleColor(this);">
+						    <option value="default">Bitcoin.com</option>
+						    <option value="paperBW">Grayscale</option>
+						    <option value="windex">BCH Gang</option>
+  						</select>
+  					</span><br>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span><br>
 						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span><br>
 						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
-						<span><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
+						<span style="display:none;"><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
 					</div>
 					<div class="generate-button">						
 							<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
@@ -10152,6 +10160,44 @@ ninja.wallets.paperwallet = {
 	templateArtisticHtml: function (i) {
 		var keyelement = 'btcprivwif';
 		var image;
+		var imgMenu = document.getElementById('walletSelector')
+		var walletIMG = imgMenu.options[imgMenu.selectedIndex].value;
+
+		switch(walletIMG) {
+    case 'paperBW':
+        image = 'img/paper-wallet-white.png';
+
+        if (ninja.wallets.paperwallet.encrypt) {
+			keyelement = 'btcencryptedkey'}
+
+        
+
+      	// Font color of cash address to black for b&w version
+        var walletHtml =
+							"<div class='artwallet' id='artwallet" + i + "'>" +
+		//"<iframe src='bitcoin-wallet-01.svg' id='papersvg" + i + "' class='papersvg' ></iframe>" +
+								"<img id='papersvg" + i + "' class='papersvg' src='" + image + "' />" +
+								"<div id='qrcode_public" + i + "' class='qrcode_public'></div>" +
+								"<div id='qrcode_private" + i + "' class='qrcode_private'></div>" +
+								"<div style='color:#000000;' class='btcaddress' id='btcaddress" + i + "'></div>" +
+								"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
+							"</div>";
+		return walletHtml;
+        break;
+    case 'default':
+        image = 'img/paper-wallet-black.png';
+        break;
+    case 'windex':
+        image = 'img/paper-wallet-black.png';
+        break;
+    default:
+        image = 'img/paper-wallet-black.png';
+		} 
+
+		if (ninja.wallets.paperwallet.encrypt) {
+			keyelement = 'btcencryptedkey'}
+
+		/*
 		if (ninja.wallets.paperwallet.encrypt) {
 			keyelement = 'btcencryptedkey'
 			image = 'img/paper-wallet-black.png';
@@ -10165,6 +10211,7 @@ ninja.wallets.paperwallet = {
 		else {
 			image = 'img/paper-wallet-black.png';
 		}
+		*/
 
 		var walletHtml =
 							"<div class='artwallet' id='artwallet" + i + "'>" +
@@ -10186,8 +10233,11 @@ ninja.wallets.paperwallet = {
 		document.getElementById("btcaddress" + idPostFix).innerHTML = bitcoinAddress;
 
 		if (ninja.wallets.paperwallet.encrypt) {			
-			var half = privateKey.length / 2;
-			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey; //.slice(0, half) + '<br />' + privateKey.slice(half); Don't need this on 2 lines with new wallet design
+			// Since you don't need the shorter length key, you don't need this conditional section
+			// One reason to keep it would be different CSS for encrypted keys, or labeling them ENCRYPTED
+			//var half = privateKey.length / 2;
+			//document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey; //.slice(0, half) + '<br />' + privateKey.slice(half); Don't need this on 2 lines with new wallet design
+			document.getElementById("btcencryptedkey" + idPostFix).innerHTML = privateKey;
 		}
 		else {
 			document.getElementById("btcprivwif" + idPostFix).innerHTML = privateKey;
