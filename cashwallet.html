@@ -6559,6 +6559,64 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		
 @media screen 	
 {
+  /*Lock and Denomination CSS*/
+  .paper-wallet {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 781px;
+    transform: rotate(180deg);
+  }
+
+  .lock-ctn {
+    position: absolute;
+    top: 436px;
+    left: 274px;    
+    width: 120px;
+    height: 103px;
+
+    -webkit-transform-origin:top left; -webkit-transform:rotate(180deg);
+		-moz-transform-origin:top left;    -moz-transform:rotate(180deg);
+		-ms-transform-origin:top left;     -ms-transform:rotate(180deg);
+		-o-transform-origin:top left;      -o-transform:rotate(180deg);
+		transform-origin:top left;         transform:rotate(180deg);
+  }
+
+  .bip-encrypted {
+    font-family: 'Montserrat', sans-serif;
+    padding: 2px 0px;
+    background-color: #000;
+    color: #fab915;
+    font-weight: 400;
+    font-size: 9px;
+    text-align: center;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    top: 40px;
+  }
+
+  .lock-art {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .denomination {
+    font-family: 'Montserrat', sans-serif;
+    color: #fab915;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 22px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    white-space: nowrap;
+  }  
+  /* End Lock and Denomination CSS */
+
+
 	#tagline { margin: 0 0 15px 0; font-style: italic; }
 	.menu  
 	{
@@ -6821,10 +6879,18 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						<div class="papersettings">
 						<span style="display:none;"><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
 						<span><label id="chooseyourwallet" for="paperIMG">Style:</label>
-							<select id="walletSelector" name="paperIMG" onchange="ninja.wallets.paperwallet.toggleColor(this);">
+							<select id="walletSelector" name="paperIMG">
 						    <option value="default">Bitcoin.com</option>
 						    <option value="paperBW">Grayscale</option>
 						    <option value="windex">BCH Gang</option>
+  						</select>
+  					</span>
+  					<span>
+							<select id="denomSelector" name="denomMenu">
+								<option value="any">Any amount</option>
+						    <option value=".05">0.05 BCH</option>
+						    <option value=".1">0.1 BCH</option>
+						    <option value="1">1 BCH</option>
   						</select>
   					</span><br>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span><br>
@@ -10160,29 +10226,25 @@ ninja.wallets.paperwallet = {
 	templateArtisticHtml: function (i) {
 		var keyelement = 'btcprivwif';
 		var image;
-		var imgMenu = document.getElementById('walletSelector')
+		var imgMenu = document.getElementById('walletSelector')		
 		var walletIMG = imgMenu.options[imgMenu.selectedIndex].value;
+		var denomMenu = document.getElementById('denomSelector');
+		var denomMenuBCH = denomMenu.options[denomMenu.selectedIndex].value;
+		// Default colors
+		var addressColor = '#ffffff;'
+		var lockArtColor = '#fab915;'
+		var lockArtBgColor = '#000000;'
+		// Display Bip38 Encrypted msg, hidden by default
+		var encryptedDisplay = 'none;'
 
 		switch(walletIMG) {
     case 'paperBW':
         image = 'img/paper-wallet-white.png';
 
-        if (ninja.wallets.paperwallet.encrypt) {
-			keyelement = 'btcencryptedkey'}
-
-        
-
       	// Font color of cash address to black for b&w version
-        var walletHtml =
-							"<div class='artwallet' id='artwallet" + i + "'>" +
-		//"<iframe src='bitcoin-wallet-01.svg' id='papersvg" + i + "' class='papersvg' ></iframe>" +
-								"<img id='papersvg" + i + "' class='papersvg' src='" + image + "' />" +
-								"<div id='qrcode_public" + i + "' class='qrcode_public'></div>" +
-								"<div id='qrcode_private" + i + "' class='qrcode_private'></div>" +
-								"<div style='color:#000000;' class='btcaddress' id='btcaddress" + i + "'></div>" +
-								"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
-							"</div>";
-		return walletHtml;
+        addressColor='#8a8a8a;'
+        lockArtColor='#8a8a8a;'
+        lockArtBgColor='#fff;'  
         break;
     case 'default':
         image = 'img/paper-wallet-black.png';
@@ -10193,9 +10255,31 @@ ninja.wallets.paperwallet = {
     default:
         image = 'img/paper-wallet-black.png';
 		} 
+		// BCH denomination, default is any, so blank
+    var denomBCH = ''
+		switch(denomMenuBCH) {
+			case 'any':
+			  denomBCH = ''
+			  break;
+			case '.05':
+			  denomBCH = '0.05 BCH'
+			  break;
+			case '.1':
+			  denomBCH = '0.1 BCH'
+			  break;
+			case '1':
+			  denomBCH = '1 BCH'
+			  break;
+			default:
+			  denomBCH = ''
+			}	
 
+    // Code and CSS for Bip38 Encrypted wallet
 		if (ninja.wallets.paperwallet.encrypt) {
-			keyelement = 'btcencryptedkey'}
+			    keyelement = 'btcencryptedkey'
+			    // Display Bip38 msg
+          encryptedDisplay = 'inherit;'
+			  } 
 
 		/*
 		if (ninja.wallets.paperwallet.encrypt) {
@@ -10219,8 +10303,20 @@ ninja.wallets.paperwallet = {
 								"<img id='papersvg" + i + "' class='papersvg' src='" + image + "' />" +
 								"<div id='qrcode_public" + i + "' class='qrcode_public'></div>" +
 								"<div id='qrcode_private" + i + "' class='qrcode_private'></div>" +
-								"<div class='btcaddress' id='btcaddress" + i + "'></div>" +
+								"<div style='color:"+ addressColor +"' class='btcaddress' id='btcaddress" + i + "'></div>" +
 								"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
+
+								"<div class='lock-ctn'>" +
+						    	"<div class='lock-art'>" +
+						      	"<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 54 54' style='enable-background:new 0 0 54 54;'' xml:space='preserve' width='57%'>" +
+						        	"<path style='fill:" + lockArtColor +"' d='M43,20.113V14.5C43,6.505,35.822,0,27,0S11,6.505,11,14.5v5.613c-3.401,0.586-6,3.55-6,7.117v19.542   C5,50.757,8.243,54,12.229,54h29.542C45.757,54,49,50.757,49,46.771V27.229C49,23.663,46.401,20.699,43,20.113z M13,14.5   C13,7.607,19.28,2,27,2s14,5.607,14,12.5V20H13V14.5z M47,46.771C47,49.654,44.654,52,41.771,52H12.229C9.346,52,7,49.654,7,46.771   V27.229C7,24.346,9.346,22,12.229,22h29.542C44.654,22,47,24.346,47,27.229V46.771z'/>" +
+						        	"<path style='fill:" + lockArtColor +"' d='M27,28c-2.206,0-4,1.794-4,4v6c0,2.206,1.794,4,4,4s4-1.794,4-4v-6C31,29.794,29.206,28,27,28z M29,38c0,1.103-0.897,2-2,2   s-2-0.897-2-2v-6c0-1.103,0.897-2,2-2s2,0.897,2,2V38z'/>" +
+						      	"</svg>" +
+							    "</div>" +
+						    "<div class='bip-encrypted' style='display:" + encryptedDisplay + "background-color:" + lockArtBgColor +" color:" + lockArtColor + "'>BIP38 ENCRYPTED</div>" +
+						    "<div class='denomination' style='color:" + lockArtColor + "'>" + denomBCH + "</div>" +
+							  "</div>" +
+
 							"</div>";
 		return walletHtml;
 	},
@@ -10267,13 +10363,7 @@ ninja.wallets.paperwallet = {
 		document.getElementById("paperpassphrase").disabled = !element.checked;
 		ninja.wallets.paperwallet.encrypt = element.checked;
 		ninja.wallets.paperwallet.resetLimits();
-	},
-
-	// Support B&W wallet
-	toggleColor: function (element) {
-		ninja.wallets.paperwallet.bw = element.checked;
-		ninja.wallets.paperwallet.resetLimits();
-	},
+	},	
 
 	resetLimits: function () {
 		var hideArt = document.getElementById("paperart");
