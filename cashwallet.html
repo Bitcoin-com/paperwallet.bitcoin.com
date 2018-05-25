@@ -6882,6 +6882,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 							<select id="walletSelector" name="paperIMG">
 						    <option value="default">Bitcoin.com</option>
 						    <option value="paperBW">Grayscale</option>
+						    <option value="pro">Pro</option>
 						    <option value="windex">BCH Gang</option>
   						</select>
   					</span>
@@ -10239,21 +10240,37 @@ ninja.wallets.paperwallet = {
 
 		switch(walletIMG) {
     case 'paperBW':
-        image = 'img/paper-wallet-white.png';
+      image = 'img/paper-wallet-white.png';
 
-      	// Font color of cash address to black for b&w version
-        addressColor='#8a8a8a;'
-        lockArtColor='#8a8a8a;'
-        lockArtBgColor='#fff;'  
-        break;
+    	// Font color of cash address to black for b&w version
+      addressColor='#8a8a8a;'
+      lockArtColor='#8a8a8a;'
+      lockArtBgColor='#fff;'  
+      break;
+
     case 'default':
-        image = 'img/paper-wallet-black.png';
-        break;
+      image = 'img/paper-wallet-black.png';
+      break;
+
+    case 'pro':
+      image = 'img/paper-wallet-pro.png';
+      // Font color of cash address to black for b&w version
+      addressColor='#7d7d7d;'
+      lockArtColor='#7d7d7d;'
+      lockArtBgColor='#000000;' 
+      break;
+
     case 'windex':
-        image = 'img/paper-wallet-black.png';
-        break;
+      image = 'img/paper-wallet-lil-windex.png';
+
+      // Font color of cash address to black for b&w version
+      addressColor='#f9009e;'
+      lockArtColor='#00fa0c;'
+      lockArtBgColor='#f9009e;' 
+      break;
+
     default:
-        image = 'img/paper-wallet-black.png';
+      image = 'img/paper-wallet-black.png';
 		} 
 		// BCH denomination, default is any, so blank
     var denomBCH = ''
