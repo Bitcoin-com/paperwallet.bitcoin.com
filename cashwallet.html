@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--
@@ -6481,7 +6481,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 } 
 #paperarea .artwallet .btcprivwif  
 {
-	position: absolute; top: 247px; left: 30px; z-index: 100; font-size: 10px; background-color: transparent;
+	position: absolute; top: 261px; left: 11px; z-index: 100; font-size: 10px; background-color: transparent;
 	font-weight:bold; color: #ffffff; margin: 0;  
 		-webkit-transform-origin:top left; -webkit-transform:rotate(-45deg);
 		-moz-transform-origin:top left;    -moz-transform:rotate(-45deg);
@@ -6753,6 +6753,25 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	#keyarea {
 		border:none !important;
 	}
+
+ /* Hide CryptoBar, if implemented */
+ ._bsa_fancybar {
+    display: none !important;
+  }
+
+  .lock-ctn {
+    position: absolute;
+    top: 424px;
+    left: 271px;    
+    width: 120px;
+    height: 103px;
+
+    -webkit-transform-origin:top left; -webkit-transform:rotate(180deg);
+		-moz-transform-origin:top left;    -moz-transform:rotate(180deg);
+		-ms-transform-origin:top left;     -ms-transform:rotate(180deg);
+		-o-transform-origin:top left;      -o-transform:rotate(180deg);
+		transform-origin:top left;         transform:rotate(180deg);
+  }
 
 }
 
@@ -10320,8 +10339,12 @@ ninja.wallets.paperwallet = {
 								"<img id='papersvg" + i + "' class='papersvg' src='" + image + "' />" +
 								"<div id='qrcode_public" + i + "' class='qrcode_public'></div>" +
 								"<div id='qrcode_private" + i + "' class='qrcode_private'></div>" +
-								"<div style='color:"+ addressColor +"' class='btcaddress' id='btcaddress" + i + "'></div>" +
-								"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
+								//"<div style='color:"+ addressColor +"' class='btcaddress' id='btcaddress" + i + "'></div>" +
+								// Use SVG instead of DIV to prevent browser printing White colors as Grey or Black by default
+								"<svg height='42' width='392' style='fill:" + addressColor + "' class='btcaddress'><text x='0' y='15' font-size='16px' id='btcaddress" + i + "' fill='" + addressColor + "'></text></svg>" +
+								
+								//"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
+								"<svg height='42' width='392' style='fill:" + addressColor + "' class='" + keyelement + "'><text id='" + keyelement + i + "' x='0' y='15' font-size='10px' fill='" + addressColor + "'></text></svg>" +
 
 								"<div class='lock-ctn'>" +
 						    	"<div class='lock-art'>" +
@@ -12190,8 +12213,7 @@ if (ninja.getQueryString()["testnet"] == "true" || ninja.getQueryString()["testn
 if (ninja.getQueryString()["showseedpool"] == "true" || ninja.getQueryString()["showseedpool"] == "1") {
 	document.getElementById("seedpoolarea").style.display = "block";
 }
-	</script>
-	<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='bcb14c00c5c15200a12099009a4ed3006f7baf006a28ff001fb49d00e1c0f700';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+	</script>	
 	<script>var BitcoinMenuWidth = 1400;</script>
   <script type="text/javascript" src="https://menu.cdn.bitcoindotcom.net/the-footer/dist/universal-footer.js"></script>
   <script src="https://menu.cdn.bitcoindotcom.net/the-menu/dist/universal-menu.js"></script>
