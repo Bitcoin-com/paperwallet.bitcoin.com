@@ -6900,6 +6900,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						<span><label id="chooseyourwallet" for="paperIMG">Style:</label>
 							<select id="walletSelector" name="paperIMG">
 						    <option value="default">Bitcoin.com</option>
+						    <option value="inksaver">Ink Saver</option>
 						    <option value="paperBW">Grayscale</option>
 						    <option value="pro">Pro</option>
 						    <option value="windex">BCH Gang</option>
@@ -10269,6 +10270,14 @@ ninja.wallets.paperwallet = {
 
     case 'default':
       image = 'img/paper-wallet-black.png';
+      break;
+
+    case 'inksaver':
+      image = 'img/paper-wallet-ink-saver.png'
+      // Font color of cash address to black for b&w version
+      addressColor='#4f4f4f;'
+      lockArtColor='#4f4f4f;'
+      lockArtBgColor='#fff;'  
       break;
 
     case 'pro':
