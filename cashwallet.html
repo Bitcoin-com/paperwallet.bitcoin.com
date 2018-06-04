@@ -6904,6 +6904,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						    <option value="paperBW">Grayscale</option>
 						    <option value="pro">Pro</option>
 						    <option value="windex">BCH Gang</option>
+						    <option value="coloringbook">DIY Coloring Book</option>
   						</select>
   					</span>
   					<span>
@@ -10278,6 +10279,14 @@ ninja.wallets.paperwallet = {
       addressColor='#4f4f4f;'
       lockArtColor='#4f4f4f;'
       lockArtBgColor='#fff;'  
+      break;
+
+    case 'coloringbook':
+      image = 'img/blank.png'
+      // Font color of cash address to black for b&w version
+      addressColor='#000000;'
+      lockArtColor='#000000;'
+      lockArtBgColor='#fff;' 
       break;
 
     case 'pro':
