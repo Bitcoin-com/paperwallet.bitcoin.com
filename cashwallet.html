@@ -6616,6 +6616,50 @@ input[type=checkbox] { position: relative; z-index: 20; }
   }  
   /* End Lock and Denomination CSS */
 
+  /* Tooltip CSS */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    font-size:0.55rem;
+    vertical-align: middle;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    font-size:1rem;
+    width: 400px;
+    background-color: #555;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 12px 12px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* End Tooltip CSS */
+
 
 	#tagline { margin: 0 0 15px 0; font-style: italic; }
 	.menu  
@@ -6649,7 +6693,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	.menu .tab.selected:hover { color: #000; }
 	
     .pagebreak { height: 50px; }
-	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; }
+	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; height: 144px;}
   #newaddress, #papergenerate {  	
   	font-size:30px;
   	border-radius: 5px;
@@ -6658,6 +6702,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		color: #666666;
 		padding: 46px 142px;
 		margin-top: 0px;
+		line-height:20px;
   }
   #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
@@ -6724,7 +6769,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 {
 	#main { width: auto; }
 	#singlearea { border: 0; }
-	#singlesafety { border: 0; }
+	#singlesafety { display: none; }
 	#paperarea .keyarea:first-child { border-top: 2px solid #fab915; }
 	#paperarea .keyarea.art:first-child { border: 0; }
 	.pagebreak { height: 1px; }
@@ -6826,7 +6871,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="testnet"></div>
 		<ul class="menu" id="menu" style="display:none;">
 			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
-			<li class="tab invisible" id="singlewallet" onclick="ninja.tab.select(this);">Single Wallet
+			<li class="tab invisible" id="singlewallet" style="display:none;" onclick="ninja.tab.select(this);">Single Wallet
 			
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
 			<li class="tab" id="brainwallet" style="display:none;" onclick="ninja.tab.select(this);">Brain Wallet
@@ -6901,7 +6946,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 							<select id="walletSelector" name="paperIMG">
 						    <option value="default">Bitcoin.com</option>
 						    <option value="inksaver">Ink Saver</option>
-						    <option value="paperBW">Grayscale</option>
+						    <option value="paperBW">Ghost</option>
 						    <option value="pro">Pro</option>
 						    <option value="windex">BCH Gang</option>
 						    <option value="coloringbook">DIY</option>
@@ -6916,23 +6961,51 @@ input[type=checkbox] { position: relative; z-index: 20; }
   						</select>
   					</span><br>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span><br>
-						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?</label> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span><br>
-						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
+						<span><input type="button" id="advancedcommandbtn" value="Show Advanced Settings" onclick="toggleAdvanced()" /></span>
+
+						<script>
+							function toggleAdvanced() {
+							    var advancedDisplay = document.getElementById("paperadvancedcommands")
+							    var advancedBtnTitle = document.getElementById("advancedcommandbtn")
+							    if (advancedDisplay.style.display === "none") {
+							        advancedDisplay.style.display = "block"
+							        advancedBtnTitle.value = "Hide Advanced Settings"
+							    } else {
+							        advancedDisplay.style.display = "none"
+							        advancedBtnTitle.value = "Show Advanced Settings"
+							        document.getElementById("paperencrypt").checked = false
+							    }
+}</script>
+
+
 						<span style="display:none;"><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
 					</div>
 					<div class="generate-button">						
-							<span><input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" /></span>
+							<span>
+								<!--<input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" />-->
+								<button id="papergenerate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);">Generate<br><span style="font-size:0.8rem;">(Click to apply settings)</span></button>
+							</span>
 					</div>
 						
 						<span style="display:none;" class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
 					</div>
-					<div id="paperadvancedcommands" class="row extra">
+					<div id="paperadvancedcommands" style="display: none;" class="row extra">
+						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>
+						<br>
+						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
 						
 						
 						<span style="display:none;"><label id="paperlabeladdressesperpage" for="paperlimitperpage">Addresses per page:</label> <input type="text" id="paperlimitperpage" /></span>
 					</div>
 				</div>
 				<div id="paperkeyarea"></div>
+				<div id="singlesafety">
+						<p id="singletip1"><b>A Bitcoin Cash (BCH) wallet</b> is as simple as a single pairing of a Bitcoin Cash (BCH) address with its corresponding Bitcoin Cash (BCH) private key. Such a wallet has been generated for you in your web browser and is displayed above.</p>
+						<p id="singletip2"><b>To safeguard this wallet</b> you must print or otherwise record the Bitcoin Cash (BCH) address and private key. It is important to make a backup copy of the private key and store it in a safe location. This site does not have knowledge of your private key. If you are familiar with PGP you can download this all-in-one HTML page and check that you have an authentic version from the author of this site by matching the SHA256 hash of this HTML with the SHA256 hash available in the signed version history document linked on the footer of this site. If you leave/refresh the site or press the "Generate New Address" button then a new private key will be generated and the previously displayed private key will not be retrievable.	Your Bitcoin Cash (BCH) private key should be kept a secret. Whomever you share the private key with has access to spend all the bitcoins associated with that address. If you print your wallet then store it in a zip lock bag to keep it safe from water. Treat a paper wallet like cash.</p>
+						<p id="singletip3"><b>Add funds</b> to this wallet by instructing others to send bitcoins to your Bitcoin address.</p>
+						<p id="singletip4"><b>Check your balance</b> by going to blockchain.info or blockexplorer.com and entering your Bitcoin address.</p>
+						<p id="singletip5"><b>Spend your Bitcoin Cash (BCH)</b> by downloading the <a href="https://wallet.bitcoin.com/">Bitcoin.com wallet</a> and sweeping the full balance of your private key into your account. When you perform a transaction your change will be sent to another Bitcoin Cash (BCH) address within the p2p client wallet. You must then backup the p2p client wallet and keep it safe as your remaining bitcoins will be stored there. Satoshi advised that one should never delete a wallet.</p>
+					</div>
 			</div>
 			
 			<div id="bulkarea" class="walletarea">
@@ -7256,7 +7329,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 				<div class="tooltip" id="statuskeypoolgood">
 					<span id="statuslabelkeypool1">This is a log of all the Bitcoin Addresses and Private Keys you generated during your current session. Reloading the page will create a new session.</span>
-					<textarea rows="20" cols="102" id="keypooltextarea"></textarea>
+					<textarea rows="20" cols="91" id="keypooltextarea"></textarea>
 					
 					<br /><br />
 					<input type="button" value="Refresh" class="button" id="statuskeypoolrefresh" onclick="ninja.status.showKeyPool();" />
