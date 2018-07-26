@@ -6718,16 +6718,30 @@ input[type=checkbox] { position: relative; z-index: 20; }
 	.menu .tab.selected:hover { color: #000; }
 	
     .pagebreak { height: 50px; }
-	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; height: 144px;}
+
+  #paperpassphrase {
+  	width:435px;
+  }  
+  #paperadvancedcommands {
+  	text-align:left;
+  	border:2px solid #fab915;
+  	border-top: none;
+  	padding:18px;
+  }
+  #advancedcommandbtn {
+  	width:100%;
+  }
+
+	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; height: 100px;}
   #newaddress, #papergenerate {  	
   	font-size:30px;
   	border-radius: 5px;
 		background-color: #ffffff;
 		border: 2px solid #666666;
-		color: #666666;
-		padding: 46px 142px;
+		color: #666666;		
 		margin-top: 0px;
 		line-height:20px;
+		padding: 22px 142px;
   }
   #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
@@ -6998,13 +7012,15 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						<script>
 							function toggleAdvanced() {
 							    var advancedDisplay = document.getElementById("paperadvancedcommands")
-							    var advancedBtnTitle = document.getElementById("advancedcommandbtn")
+							    var advancedBtnTitle = document.getElementById("advancedcommandbtn")							    
 							    if (advancedDisplay.style.display === "none") {
 							        advancedDisplay.style.display = "block"
 							        advancedBtnTitle.value = "Hide Advanced Settings"
+							        
 							    } else {
 							        advancedDisplay.style.display = "none"
-							        advancedBtnTitle.value = "Show Advanced Settings"
+							        advancedBtnTitle.value = "Show Advanced Settings"						       
+							        
 							        document.getElementById("paperencrypt").checked = false
 							    }
 }</script>
@@ -7021,15 +7037,15 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						
 						<span style="display:none;" class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
 					</div>
-					<div id="paperadvancedcommands" style="display: none;" class="row extra">
-						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>
-						<br>
+					
+				</div>
+				<div id="paperadvancedcommands" style="display: none;" class="row extra">
+						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>						
 						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
 						
 						
 						<span style="display:none;"><label id="paperlabeladdressesperpage" for="paperlimitperpage">Addresses per page:</label> <input type="text" id="paperlimitperpage" /></span>
 					</div>
-				</div>
 				<div id="paperkeyarea"></div>
 				<div id="singlesafety">
 						<p id="singletip1"><b>A Bitcoin Cash (BCH) wallet</b> is as simple as a single pairing of a Bitcoin Cash (BCH) address with its corresponding Bitcoin Cash (BCH) private key. Such a wallet has been generated for you in your web browser and is displayed above.</p>
