@@ -6986,29 +6986,115 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			<div id="paperarea">
 
 			<style>
-			.step-one-select-style {
+			#stepOneSelectStyle {
 				height: 885px;
+				-webkit-transition: height 0.5s ease-in-out;
+			  -moz-transition: height 0.5s ease-in-out;
+			  -ms-transition: height 0.5s ease-in-out;
+			  -o-transition: height 0.5s ease-in-out;
+			  transition: height 0.5s ease-in-out;
 				border-left: 2px solid #fab915;
 				border-right: 2px solid #fab915;
+				border-bottom: 2px solid #fab915;
 			}
 			.style-example img {
 				width: 350px;
 			}
-			.style-col-left {
-				float:left;
-				padding: 12px 24px;
+			.style-col {
+				position: relative;
+				color: #fff;
+				padding: 12px 26px;
+				opacity: 0.25;
+				-webkit-transition: opacity 0.5s ease-in-out;
+			  -moz-transition: opacity 0.5s ease-in-out;
+			  -ms-transition: opacity 0.5s ease-in-out;
+			  -o-transition: opacity 0.5s ease-in-out;
+			  transition: opacity 0.5s ease-in-out;
+			  -webkit-transition: background-color 0.5s ease-in-out;
+			  -moz-transition: background-color 0.5s ease-in-out;
+			  -ms-transition: background-color 0.5s ease-in-out;
+			  -o-transition: background-color 0.5s ease-in-out;
+			  transition: background-color 0.5s ease-in-out;
+			  -webkit-transition: color 0.5s ease-in-out;
+			  -moz-transition: color 0.5s ease-in-out;
+			  -ms-transition: color 0.5s ease-in-out;
+			  -o-transition: color 0.5s ease-in-out;
+			  transition: color 0.5s ease-in-out;
 			}
-			.style-col-right {
+			.sc-left {
+				float:left;				
+			}
+			.sc-right {
 				float:right;
-				padding: 12px 24px;
 			}
-			.style-col-left:hover, .style-col-right:hover {
-				background-color:#fab915;
+			.style-col:hover {
+				opacity: 1;				
+				background-image: radial-gradient(grey, #fab915);
+				color: #000;
 			}
+			.selected-design {
+				opacity: 1;
+				background-image: radial-gradient(grey, #fab915);
+			}
+			.confirm-design {
+				/*Hide button and make inactive until design is selected*/
+				opacity:0;
+				pointer-events:none;
+
+				-webkit-transition: opacity 0.5s ease-in-out;
+			  -moz-transition: opacity 0.5s ease-in-out;
+			  -ms-transition: opacity 0.5s ease-in-out;
+			  -o-transition: opacity 0.5s ease-in-out;
+			  transition: opacity 0.5s ease-in-out;
+				position:absolute;
+				border-radius: 100px;
+				border: 3px solid #000;
+				padding: 10px 10px 10px 40px;				
+				top: 136px;
+				right: 100px;
+				color: #fff;
+				background-color: rgba(0, 0, 0, 0.5);
+				background-image: url(img/arrow-in-circle-white.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 4% 50%;
+			}
+			.confirm-design-white {
+				border: 3px solid #fff;
+			}
+			.confirm-design:hover {
+				background-color: #fff;
+				color: #fab915;
+				border: 3px solid #fab915;
+				background-image: url(img/arrow-in-circle-gold.png);
+				cursor: pointer;
+			}
+
+			#bikeshed {
+				display: none;
+				background-color: #fab915;
+				color: #000;
+				font-weight: 700;
+				padding: 12px;
+				background-image: url(img/arrow-in-circle-black.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 33% 50%;
+			}
+			#bikeshed:hover {
+				background-color: grey;
+				color: #fff;
+				background-image: url(img/arrow-in-circle-white.png);
+				cursor: pointer;
+			}
+			
 			</style>
-				<div class="step-one-select-style">
+				<div id="stepOneSelectStyle">
 					<div class="style-row">
-						<div class="style-col-left">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onClick="designConfirmed(this)" data-wallet-skin="default" class="confirm-design confirm-design-white">
+								Select and Continue
+							</div>
 							<div class="style-label">
 								Bitcoin.com
 							</div>
@@ -7016,7 +7102,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								<img src="img/style1_bitcoindotcom.png">
 							</div>
 						</div>
-						<div class="style-col-right">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onClick="designConfirmed(this)" data-wallet-skin="inksaver" class="confirm-design">
+								Select and Continue
+							</div>
 							<div class="style-label">
 							Ink Saver
 						</div>
@@ -7026,7 +7115,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						</div>
 					</div>
 					<div class="style-row">
-						<div class="style-col-left">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onClick="designConfirmed(this)" data-wallet-skin="paperBW" class="confirm-design">
+								Select and Continue
+							</div>
 							<div class="style-label">
 							Ghost
 							</div>
@@ -7034,7 +7126,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								<img src="img/style3_ghost.png">
 							</div>
 						</div>
-						<div class="style-col-right">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onClick="designConfirmed(this)" data-wallet-skin="pro" class="confirm-design confirm-design-white">
+								Select and Continue
+							</div>
 							<div class="style-label">
 							Pro
 							</div>
@@ -7044,7 +7139,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						</div>
 					</div>
 					<div class="style-row">
-						<div class="style-col-left">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onClick="designConfirmed(this)" data-wallet-skin="windex" class="confirm-design">
+								Select and Continue
+							</div>
 							<div class="style-label">
 							BCH Gang
 							</div>
@@ -7052,7 +7150,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								<img src="img/style5_bchgang.png">
 							</div>
 						</div>
-						<div class="style-col-right">
+						<div onClick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onClick="designConfirmed(this)" data-wallet-skin="coloringbook" class="confirm-design">
+								Select and Continue
+							</div>
 							<div class="style-label">
 							DIY
 							</div>
@@ -7060,7 +7161,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								<img src="img/style6_diy.png">
 							</div>
 						</div>
-					</div>						
+					</div>
+					<div onClick="redesign()" id="bikeshed">
+						Choose a Different Design
+					</div>					
 				</div>
 				<div class="commands">
 					<div id="papercommands" class="row">
@@ -7101,7 +7205,58 @@ input[type=checkbox] { position: relative; z-index: 20; }
 							        
 							        document.getElementById("paperencrypt").checked = false
 							    }
-}</script>
+							}
+
+							function toggleSelectedDesign(element) {
+								// Hide all confirm buttons
+								var confirmBtns = document.getElementsByClassName('confirm-design')								
+								for (i = 0; i < confirmBtns.length; i++) {
+								    confirmBtns[i].style.opacity = 0
+								    confirmBtns[i].style.pointerEvents = "none"
+								}
+
+								// Remove selected-design class from all wallets
+								var walletDesigns = document.getElementsByClassName('style-col')								
+								for (i = 0; i < walletDesigns.length; i++) {
+								    walletDesigns[i].classList.remove('selected-design')
+								} 
+								// Add selected-design class to selected wallet
+								element.classList.toggle('selected-design')
+								element.firstElementChild.style.opacity = 1
+								element.firstElementChild.style.pointerEvents = "auto"
+							}
+
+							function designConfirmed(element) {
+								var design = element.dataset.walletSkin
+								var imgMenu = document.getElementById('walletSelector')		
+								imgMenu.options[imgMenu.selectedIndex].value = design
+								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);
+								var vanishers = document.getElementsByClassName('style-col')
+								for (i = 0; i < vanishers.length; i++) {
+										    vanishers[i].style.display = 'none'
+										}
+								document.getElementById('stepOneSelectStyle').style.height = '42px'
+								document.getElementById('bikeshed').style.display = 'block'
+								//var appearers = document.getElementsByClassName('designVanish')
+								//for (i = 0; i < appearers.length; i++) {
+								//		    appearers[i].style.display = 'block'
+								//		}
+							}
+
+							function redesign() {
+								var appearers = document.getElementsByClassName('style-col')
+								for (i = 0; i < appearers.length; i++) {
+										    appearers[i].style.display = 'block'
+										}
+								document.getElementById('stepOneSelectStyle').style.height = '885px'
+								document.getElementById('bikeshed').style.display = 'none'
+								
+								//var vanishers = document.getElementsByClassName('designVanish')
+								//for (i = 0; i < vanishers.length; i++) {
+								//		    vanishers[i].style.display = 'none'
+								//		}
+							}
+						</script>
 
 
 						<span style="display:none;"><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
