@@ -6705,6 +6705,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		border-radius:5px;
 		padding:4px;
 		margin:3px 10px;
+		display: none;
 	}
 	.menu .tab.selected  
 	{
@@ -6817,7 +6818,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
     .footer .statuswarn { color: orange; font-weight: bold; }
 	.footer .statusbad { color: red; font-weight: bold; }
     .footer .statusicon { background-color: none; font-size: 120%; padding: 1px 2px; }
-    .footer .statusicon:hover { background-color: green; cursor: pointer; }
+    .footer .statusicon:hover { background-color: #fab915; cursor: pointer; }
 }
 @media print
 {
@@ -6859,18 +6860,26 @@ input[type=checkbox] { position: relative; z-index: 20; }
   }
 
   /* Hide Step flags */
+  #stepOneSelectStyle {
+  	display: none !important;
+  }
+
   #bikeShedUno {
   	display: none;
   }
-  #bikeShedDos {
+  #bikeshedDos {
   	display: none !important;
   }
+  #paperadvancedcommands {
+  	display: none !important;
+  }
+
   .step-header {
   	display: none;
   }
 
   #stepThreePrint {
-  	display: none;
+  	display: none !important;
   }
 
   .lock-ctn {
@@ -7127,6 +7136,8 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				background-size: auto 60%;
 				background-repeat: no-repeat;
 				background-position: 30% 50%;
+				text-align: left;
+				padding-left:34%;
 			}
 			#bikeshedDos:hover {
 				background-color: grey;
@@ -7263,7 +7274,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
   						</select>
   					</span>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input onchange="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" type="text" id="paperlimit" /></span>
-						<span><button id="advancedcommandbtn" onclick="toggleAdvanced()">Show Advanced Settings</button></span>
+						<span><button id="advancedcommandbtn" onclick="toggleAdvanced()">Advanced Settings</button></span>
 
 						<script>
 							function toggleAdvanced() {
@@ -7279,7 +7290,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 							        
 							    } else {
 							        advancedDisplay.style.display = "none"
-							        advancedBtnTitle.innerHTML = "Show Advanced Settings"		
+							        advancedBtnTitle.innerHTML = "Advanced Settings"		
 							        walletDisplayed.style.display = "block"				       
 							        
 							        // Uncheck the encryption option and regenerate an unencrypted wallet
@@ -7341,11 +7352,11 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								document.getElementById('paperarea').style.display = "none"
 							}
 							function generateFromAdvanced() {
+								// Show the main wallet area
 								document.getElementById('paperkeyarea').style.display = "block"
-								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);
-
-							// Show the "step 3 print" button
-							document.getElementById('stepThreePrint').style.display = "block"
+								// Show the "step 3 print" button
+								document.getElementById('stepThreePrint').style.display = "block"
+								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);						
 									
 							}
 						</script>
@@ -10557,6 +10568,7 @@ ninja.wallets.paperwallet = {
 		if (ninja.wallets.paperwallet.encrypt) {
 			if (passphrase == "") {
 				alert(ninja.translator.get("bip38alertpassphraserequired"));
+				document.getElementById('stepThreePrint').style.display = "none"
 				return;
 			}
 			document.getElementById("busyblock").className = "busy";
