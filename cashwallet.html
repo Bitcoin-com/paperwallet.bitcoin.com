@@ -6955,7 +6955,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
 		<ul class="menu" id="menu" style="display:none;">
-			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
+			<li class="tab invisible" style="display:none;" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
 			<li class="tab invisible" id="singlewallet" style="display:none;" onclick="ninja.tab.select(this);">Single Wallet
 			
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
@@ -6969,7 +6969,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Bitcoin Cash (BCH) Address...</span><br /><br />
 			<span id="generatelabelmovemouse">Move your mouse around to add some extra randomness... </span><span style="display:none;" id="mousemovelimit"></span><br /><br />
-			<span id="generatelabelkeypress">OR type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
+			<span id="generatelabelkeypress">No mouse? Type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
 		</div>
 
@@ -7281,11 +7281,16 @@ input[type=checkbox] { position: relative; z-index: 20; }
   						</select>
   					</span>
   					<span><label id="denomLabel">Custom BCH Amount?</label>
-							<select onchange="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" id="denomSelector" name="denomMenu">
+							<select onchange="denomChange(this.value)" id="denomSelector" name="denomMenu">
 								<option value="any">Any amount</option>
 						    <option value=".05">0.05 BCH</option>
 						    <option value=".1">0.1 BCH</option>
+						    <option value=".25">0.25 BCH</option>						    
+						    <option value=".5">0.5 BCH</option>						    
+						    <option value=".75">0.75 BCH</option>
 						    <option value="1">1 BCH</option>
+						    <option value="5">5 BCH</option>
+						    <option value="10">10 BCH</option>
   						</select>
   					</span>
 						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input onchange="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" type="text" id="paperlimit" /></span>
@@ -7371,8 +7376,25 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								document.getElementById('paperkeyarea').style.display = "block"
 								// Show the "step 3 print" button
 								document.getElementById('stepThreePrint').style.display = "block"
-								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);						
-									
+								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);									
+							}
+
+							function denomChange(denomLabel) {
+								var denomLabels = document.getElementsByClassName('denomination')
+
+								for (i = 0; i < denomLabels.length; i++) {
+
+									if (denomLabel == 'any') {
+										denomLabels[i].innerHTML = ''
+									}
+									else if(denomLabel < 1) {
+										denomLabels[i].innerHTML = '0' + denomLabel + ' BCH'
+									}
+									else {
+										denomLabels[i].innerHTML = denomLabel + ' BCH'
+									}
+										    
+								}
 							}
 						</script>
 
@@ -7387,7 +7409,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 				<div id="paperadvancedcommands" style="display: none;" class="row extra">
 					<h2 style="font-size:15px;">Check the BIP38 option, enter a passphrase, and click "Generate" to create an encrypted wallet.</h2>
-						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>						
+						<span><input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> </span>						
 						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span>
 
 						<div class="generate-button">						
@@ -10826,8 +10848,23 @@ ninja.wallets.paperwallet = {
 			case '.1':
 			  denomBCH = '0.1 BCH'
 			  break;
+			case '.25':
+			  denomBCH = '0.25 BCH'
+			  break;
+			case '.5':
+			  denomBCH = '0.5 BCH'
+			  break;
+			case '.75':
+			  denomBCH = '0.75 BCH'
+			  break;
 			case '1':
 			  denomBCH = '1 BCH'
+			  break;
+			case '5':
+			  denomBCH = '5 BCH'
+			  break;
+			case '10':
+			  denomBCH = '10 BCH'
 			  break;
 			default:
 			  denomBCH = ''
