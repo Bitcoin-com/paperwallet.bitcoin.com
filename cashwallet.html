@@ -6705,6 +6705,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		border-radius:5px;
 		padding:4px;
 		margin:3px 10px;
+		display: none;
 	}
 	.menu .tab.selected  
 	{
@@ -6720,28 +6721,44 @@ input[type=checkbox] { position: relative; z-index: 20; }
     .pagebreak { height: 50px; }
 
   #paperpassphrase {
-  	width:435px;
+  	width:320px;
+  	margin-right:8px;
   }  
   #paperadvancedcommands {
   	text-align:left;
   	border:2px solid #fab915;
   	border-top: none;
   	padding:18px;
+  	height:80px;
   }
   #advancedcommandbtn {
-  	width:100%;
-  }
-
-	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; height: 100px;}
-  #newaddress, #papergenerate {  	
-  	font-size:30px;
+  	font-size:16px;
   	border-radius: 5px;
 		background-color: #ffffff;
 		border: 2px solid #666666;
 		color: #666666;		
 		margin-top: 0px;
 		line-height:20px;
-		padding: 22px 142px;
+		padding: 4px;
+  }
+  #advancedcommandbtn:hover {
+  	cursor:pointer;
+		background-color: #666666;
+		color: #ffffff;
+  }
+
+	.commands { padding: 10px 15px 5px 15px; margin-bottom: 0; height: 35px;}
+  #newaddress, #papergenerate { 
+    display: none; 	
+  	font-size:18px;
+  	border-radius: 5px;
+		background-color: #ffffff;
+		border: 2px solid #666666;
+		color: #666666;		
+		margin-top: 0px;
+		line-height:20px;
+		padding: 4px;
+		width: 100%;
   }
   #newaddress:hover, #papergenerate:hover {  	
   	cursor:pointer;
@@ -6754,8 +6771,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
   	line-height:200%;
   }
   .generate-button {
-  	display:inline-block;
-  	float:right;
+  	display:inline-block;  	
   }
 
 	.commands .row { padding: 0 0; text-align: left; } 
@@ -6802,7 +6818,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
     .footer .statuswarn { color: orange; font-weight: bold; }
 	.footer .statusbad { color: red; font-weight: bold; }
     .footer .statusicon { background-color: none; font-size: 120%; padding: 1px 2px; }
-    .footer .statusicon:hover { background-color: green; cursor: pointer; }
+    .footer .statusicon:hover { background-color: #fab915; cursor: pointer; }
 }
 @media print
 {
@@ -6841,6 +6857,29 @@ input[type=checkbox] { position: relative; z-index: 20; }
  /* Hide CryptoBar, if implemented */
  ._bsa_fancybar {
     display: none !important;
+  }
+
+  /* Hide Step flags */
+  #stepOneSelectStyle {
+  	display: none !important;
+  }
+
+  #bikeShedUno {
+  	display: none;
+  }
+  #bikeshedDos {
+  	display: none !important;
+  }
+  #paperadvancedcommands {
+  	display: none !important;
+  }
+
+  .step-header {
+  	display: none;
+  }
+
+  #stepThreePrint {
+  	display: none !important;
   }
 
   .lock-ctn {
@@ -6916,7 +6955,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
 		<ul class="menu" id="menu" style="display:none;">
-			<li class="tab invisible" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
+			<li class="tab invisible" style="display:none;" id="paperwallet" onclick="ninja.tab.select(this);">Paper Wallet
 			<li class="tab invisible" id="singlewallet" style="display:none;" onclick="ninja.tab.select(this);">Single Wallet
 			
 			<li class="tab" id="bulkwallet" style="display:none;" onclick="ninja.tab.select(this);">Bulk Wallet
@@ -6930,7 +6969,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		<div id="generate">
 			<span id="generatelabelbitcoinaddress">Generating Bitcoin Cash (BCH) Address...</span><br /><br />
 			<span id="generatelabelmovemouse">Move your mouse around to add some extra randomness... </span><span style="display:none;" id="mousemovelimit"></span><br /><br />
-			<span id="generatelabelkeypress">OR type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
+			<span id="generatelabelkeypress">No mouse? Type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
 		</div>
 
@@ -6983,12 +7022,255 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				</div>
 			</div>
 
-			<div id="paperarea">
+			
+
+			<style>
+			#stepOneSelectStyle {
+				display: none;
+				height: 928px;
+				-webkit-transition: height 0.5s ease-in-out;
+			  -moz-transition: height 0.5s ease-in-out;
+			  -ms-transition: height 0.5s ease-in-out;
+			  -o-transition: height 0.5s ease-in-out;
+			  transition: height 0.5s ease-in-out;
+				border-left: 2px solid #fab915;
+				border-right: 2px solid #fab915;
+				border-bottom: 2px solid #fab915;
+			}
+			.style-example img {
+				width: 350px;
+			}
+			.style-example svg {
+				width:350px;
+				height:248px;
+			}
+			.style-col {
+				position: relative;
+				color: #fff;
+				padding: 12px 26px;
+				opacity: 0.25;
+				-webkit-transition: opacity 0.5s ease-in-out;
+			  -moz-transition: opacity 0.5s ease-in-out;
+			  -ms-transition: opacity 0.5s ease-in-out;
+			  -o-transition: opacity 0.5s ease-in-out;
+			  transition: opacity 0.5s ease-in-out;
+			  -webkit-transition: background-color 0.5s ease-in-out;
+			  -moz-transition: background-color 0.5s ease-in-out;
+			  -ms-transition: background-color 0.5s ease-in-out;
+			  -o-transition: background-color 0.5s ease-in-out;
+			  transition: background-color 0.5s ease-in-out;
+			  -webkit-transition: color 0.5s ease-in-out;
+			  -moz-transition: color 0.5s ease-in-out;
+			  -ms-transition: color 0.5s ease-in-out;
+			  -o-transition: color 0.5s ease-in-out;
+			  transition: color 0.5s ease-in-out;
+			}
+			.sc-left {
+				float:left;				
+			}
+			.sc-right {
+				float:right;
+			}
+			.style-col:hover {
+				opacity: 1;				
+				background-image: radial-gradient(grey, #fab915);
+				color: #000;
+			}
+			.selected-design {
+				opacity: 1;
+				background-image: radial-gradient(grey, #fab915);
+			}
+			.confirm-design {
+				/*Hide button and make inactive until design is selected*/
+				opacity:0;
+				pointer-events:none;
+
+				-webkit-transition: opacity 0.5s ease-in-out;
+			  -moz-transition: opacity 0.5s ease-in-out;
+			  -ms-transition: opacity 0.5s ease-in-out;
+			  -o-transition: opacity 0.5s ease-in-out;
+			  transition: opacity 0.5s ease-in-out;
+				position:absolute;
+				border-radius: 100px;
+				border: 3px solid #000;
+				padding: 10px 10px 10px 40px;				
+				top: 136px;
+				right: 100px;
+				color: #fff;
+				background-color: rgba(0, 0, 0, 0.5);
+				background-image: url(img/arrow-in-circle-white.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 4% 50%;
+			}
+			.confirm-design-white {
+				border: 3px solid #fff;
+			}
+			.confirm-design:hover {
+				background-color: #fff;
+				color: #fab915;
+				border: 3px solid #fab915;
+				background-image: url(img/arrow-in-circle-gold.png);
+				cursor: pointer;
+			}
+
+			#bikeshedUno {
+				
+			}
+			.step-header {
+				background-color: #fab915;
+				color: #000;
+				font-weight: 700;
+				padding: 12px;
+				background-image: url(img/arrow-in-circle-black-down.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 30% 50%;
+				text-align: left;
+				padding-left:34%;
+			}
+
+			#bikeshedDos {
+				display: none;
+				background-color: #fab915;
+				color: #000;
+				font-weight: 700;
+				padding: 12px;
+				background-image: url(img/arrow-in-circle-black.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 30% 50%;
+				text-align: left;
+				padding-left:34%;
+			}
+			#bikeshedDos:hover {
+				background-color: grey;
+				color: #fff;
+				background-image: url(img/arrow-in-circle-white.png);
+				cursor: pointer;
+			}
+
+			#stepThreePrint {
+				background-color: #fab915;
+				color: #000;
+				font-weight: 700;
+				padding: 12px;
+				background-image: url(img/arrow-in-circle-black.png);
+				background-size: auto 60%;
+				background-repeat: no-repeat;
+				background-position: 30% 50%;
+				text-align: left;
+				padding-left:34%;
+			}
+			#stepThreePrint:hover {
+				background-color: grey;
+				color: #fff;
+				background-image: url(img/arrow-in-circle-white.png);
+				cursor: pointer;
+			}
+			.print-btn {
+				background:#3d3d3d;
+				color:#fff;
+				padding:5px 10px;
+				border-radius:3px; 
+				display:inline-block;
+			}
+			.print-btn:hover {
+				background: #fff;
+				color: #3d3d3d;
+			}
+			
+			</style>
+				<div id="stepOneSelectStyle">
+					<div id="bikeshedUno" class="step-header">
+						Step One - Choose Your Design
+					</div>
+					<div onclick="redesign()" id="bikeshedDos">
+						Step One - Choose Your Design
+					</div>		
+					<div class="style-row">
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onclick="designConfirmed(this)" data-wallet-skin="default" class="confirm-design confirm-design-white">
+								Select and Continue
+							</div>
+							<div class="style-label">
+								Bitcoin.com
+							</div>
+							<div class="style-example">
+								<img src="img/style1_bitcoindotcom.png">
+							</div>
+						</div>
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onclick="designConfirmed(this)" data-wallet-skin="inksaver" class="confirm-design">
+								Select and Continue
+							</div>
+							<div class="style-label">
+							Ink Saver
+						</div>
+						<div class="style-example">
+							<img src="img/style2_inksaver.png">
+						</div>
+						</div>
+					</div>
+					<div class="style-row">
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onclick="designConfirmed(this)" data-wallet-skin="paperBW" class="confirm-design">
+								Select and Continue
+							</div>
+							<div class="style-label">
+							Ghost
+							</div>
+							<div class="style-example">
+								<img src="img/style3_ghost.png">
+							</div>
+						</div>
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onclick="designConfirmed(this)" data-wallet-skin="pro" class="confirm-design confirm-design-white">
+								Select and Continue
+							</div>
+							<div class="style-label">
+							Pro
+							</div>
+							<div class="style-example">
+								<img src="img/style4_pro.png">
+							</div>
+						</div>
+					</div>
+					<div class="style-row">
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-left">
+							<div onclick="designConfirmed(this)" data-wallet-skin="windex" class="confirm-design">
+								Select and Continue
+							</div>
+							<div class="style-label">
+							BCH Gang
+							</div>
+							<div class="style-example">
+								<img src="img/style5_bchgang.png">
+							</div>
+						</div>
+						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-right">
+							<div onclick="designConfirmed(this)" data-wallet-skin="coloringbook" class="confirm-design">
+								Select and Continue
+							</div>
+							<div class="style-label">
+							DIY
+							</div>
+							<div class="style-example">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M430.9 393.4l-119.6-119-58.1-57.9-13.4-13.3c15.9-40.6 7.1-88.2-26.6-121.7-35.4-35.3-88.5-42.3-131-22.9l76.1 75.8-53.1 52.9-77.9-75.8C6.2 153.8 15 206.7 50.4 242c33.6 33.5 81.4 42.3 122.1 26.5l14.4 14.3L81.7 388c-7.6 5.7-7.6 19 1.9 26.6l43.8 43.7c7.6 7.6 19.1 7.6 26.7 0l96.1-112.4 113.4 112.9c7.1 7.1 17.7 7.1 24.8 0l40.7-40.6c8.9-7.1 8.9-19.5 1.8-24.8z"/><path d="M494.4 216.6l-34.5-34.1c-2.2-2.2-5.8-2.2-8 0l-3.7 3.7-18.5-15.8s1.2-10-4.9-18.7c-6.2-8.7-16.1-19.8-23.2-26.9-7.1-7-34.1-33.9-69.7-51.4C296.2 55.7 271 48 241 48v29.7s28.7 16.6 45.1 29.7c16.3 13.1 16.8 59.5 16.8 59.5l-28.5 28.5 56.5 56.1 31-36.3c12.9-3.5 23.8-3.8 30.2-.3l13.7 13.3-9.6 9.5c-2.2 2.2-2.2 5.7 0 7.9l34.5 34.1c2.2 2.2 5.8 2.2 8 0l55.7-55.2c2.1-2.2 2.1-5.8 0-7.9z"/></svg>
+							</div>
+						</div>
+					</div>								
+				</div>
+				<div id="paperarea">
+					<div class="step-header">
+						Step Two - Customize
+					</div>	
 				<div class="commands">
+					
 					<div id="papercommands" class="row">
 						<div class="papersettings">
 						<span style="display:none;"><label id="paperlabelhideart" for="paperart">Hide Art?</label> <input type="checkbox" id="paperart" onchange="ninja.wallets.paperwallet.toggleArt(this);" /></span>
-						<span><label id="chooseyourwallet" for="paperIMG">Style:</label>
+						<span style="display:none;"><label id="chooseyourwallet" for="paperIMG">Style:</label>
 							<select id="walletSelector" name="paperIMG">
 						    <option value="default">Bitcoin.com</option>
 						    <option value="inksaver">Ink Saver</option>
@@ -6998,54 +7280,151 @@ input[type=checkbox] { position: relative; z-index: 20; }
 						    <option value="coloringbook">DIY</option>
   						</select>
   					</span>
-  					<span>
-							<select id="denomSelector" name="denomMenu">
+  					<span><label id="denomLabel">Custom BCH Amount?</label>
+							<select onchange="denomChange(this.value)" id="denomSelector" name="denomMenu">
 								<option value="any">Any amount</option>
 						    <option value=".05">0.05 BCH</option>
 						    <option value=".1">0.1 BCH</option>
+						    <option value=".25">0.25 BCH</option>						    
+						    <option value=".5">0.5 BCH</option>						    
+						    <option value=".75">0.75 BCH</option>
 						    <option value="1">1 BCH</option>
+						    <option value="5">5 BCH</option>
+						    <option value="10">10 BCH</option>
   						</select>
-  					</span><br>
-						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input type="text" id="paperlimit" /></span><br>
-						<span><input type="button" id="advancedcommandbtn" value="Show Advanced Settings" onclick="toggleAdvanced()" /></span>
+  					</span>
+						<span><label id="paperlabeladdressestogenerate" for="paperlimit">Addresses to generate:</label> <input onchange="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" type="text" id="paperlimit" /></span>
+						<span><button id="advancedcommandbtn" onclick="toggleAdvanced()">Advanced Settings</button></span>
 
 						<script>
 							function toggleAdvanced() {
 							    var advancedDisplay = document.getElementById("paperadvancedcommands")
-							    var advancedBtnTitle = document.getElementById("advancedcommandbtn")							    
+							    var advancedBtnTitle = document.getElementById("advancedcommandbtn")	
+							    var walletDisplayed = document.getElementById("paperkeyarea")						    
 							    if (advancedDisplay.style.display === "none") {
 							        advancedDisplay.style.display = "block"
-							        advancedBtnTitle.value = "Hide Advanced Settings"
+							        advancedBtnTitle.innerHTML = "Hide Advanced Settings"
+							        walletDisplayed.style.display = "none"
+							        // Hide Step 3 Print; show when wallet is generated
+							        document.getElementById('stepThreePrint').style.display="none"
 							        
 							    } else {
 							        advancedDisplay.style.display = "none"
-							        advancedBtnTitle.value = "Show Advanced Settings"						       
+							        advancedBtnTitle.innerHTML = "Advanced Settings"		
+							        walletDisplayed.style.display = "block"				       
 							        
+							        // Uncheck the encryption option and regenerate an unencrypted wallet
 							        document.getElementById("paperencrypt").checked = false
+							        // This doesn't disable the passphrase box or encryption though when you reset it with code, so do it manually
+							        //<input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" />
+							        ninja.wallets.paperwallet.toggleEncrypt(document.getElementById('paperencrypt'))
+							        generateFromAdvanced()
 							    }
-}</script>
+							}
+
+							function toggleSelectedDesign(element) {
+								// Hide all confirm buttons
+								var confirmBtns = document.getElementsByClassName('confirm-design')								
+								for (i = 0; i < confirmBtns.length; i++) {
+								    confirmBtns[i].style.opacity = 0
+								    confirmBtns[i].style.pointerEvents = "none"
+								}
+
+								// Remove selected-design class from all wallets
+								var walletDesigns = document.getElementsByClassName('style-col')								
+								for (i = 0; i < walletDesigns.length; i++) {
+								    walletDesigns[i].classList.remove('selected-design')
+								} 
+								// Add selected-design class to selected wallet
+								element.classList.toggle('selected-design')
+								element.firstElementChild.style.opacity = 1
+								element.firstElementChild.style.pointerEvents = "auto"
+							}
+
+							function designConfirmed(element) {
+								var design = element.dataset.walletSkin
+								var imgMenu = document.getElementById('walletSelector')		
+								imgMenu.options[imgMenu.selectedIndex].value = design
+								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);
+								var vanishers = document.getElementsByClassName('style-col')
+								for (i = 0; i < vanishers.length; i++) {
+										    vanishers[i].style.display = 'none'
+										}
+								document.getElementById('stepOneSelectStyle').style.height = '42px'
+								document.getElementById('bikeshedUno').style.display = 'none'
+								document.getElementById('bikeshedDos').style.display = 'block'
+
+
+								// Show the rest of the interface
+								document.getElementById('paperarea').style.display = "block";
+							}
+
+							function redesign() {
+								var appearers = document.getElementsByClassName('style-col')
+								for (i = 0; i < appearers.length; i++) {
+										    appearers[i].style.display = 'block'
+										}
+								document.getElementById('stepOneSelectStyle').style.height = '928px'
+								document.getElementById('bikeshedUno').style.display = 'block'
+								document.getElementById('bikeshedDos').style.display = 'none'														
+
+								// Hide the rest of the interface
+								document.getElementById('paperarea').style.display = "none"
+							}
+							function generateFromAdvanced() {
+								// Show the main wallet area
+								document.getElementById('paperkeyarea').style.display = "block"
+								// Show the "step 3 print" button
+								document.getElementById('stepThreePrint').style.display = "block"
+								ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);									
+							}
+
+							function denomChange(denomLabel) {
+								var denomLabels = document.getElementsByClassName('denomination')
+
+								for (i = 0; i < denomLabels.length; i++) {
+
+									if (denomLabel == 'any') {
+										denomLabels[i].innerHTML = ''
+									}
+									else if(denomLabel < 1) {
+										denomLabels[i].innerHTML = '0' + denomLabel + ' BCH'
+									}
+									else {
+										denomLabels[i].innerHTML = denomLabel + ' BCH'
+									}
+										    
+								}
+							}
+						</script>
 
 
 						<span style="display:none;"><label id="paperlabelBW" for="paperBW">Grayscale?</label> <input type="checkbox" id="paperBW" onchange="ninja.wallets.paperwallet.toggleColor(this);" /></span>						
 					</div>
-					<div class="generate-button">						
-							<span>
-								<!--<input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" />-->
-								<button id="papergenerate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);">Generate<br><span style="font-size:0.8rem;">(Click to apply settings)</span></button>
-							</span>
-					</div>
+					
 						
 						<span style="display:none;" class="print"><input type="button" name="print" value="Print" id="paperprint" onclick="window.print();" /></span>
 					</div>
 					
 				</div>
 				<div id="paperadvancedcommands" style="display: none;" class="row extra">
-						<span><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> <input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /></span>						
-						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span><br>
+					<h2 style="font-size:15px;">Check the BIP38 option, enter a passphrase, and click "Generate" to create an encrypted wallet.</h2>
+						<span><input type="checkbox" id="paperencrypt" onchange="ninja.wallets.paperwallet.toggleEncrypt(this);" /><label id="paperlabelencrypt" for="paperencrypt">BIP38 Encrypt?&nbsp;&nbsp;</label><div class="tooltip">(What's this?)<span class="tooltiptext">Selecting this option allows you to encrypt your wallet with a password you choose. You will not be able to spend from the wallet without this password. The benefit is additional security, but be careful &mdash; there is no way to recover your password if you forget it!</span></div> </span>						
+						<span><label id="paperlabelBIPpassphrase" for="paperpassphrase">Passphrase:</label> <input type="text" id="paperpassphrase" /></span>
+
+						<div class="generate-button">						
+							<span>
+								<!--<input type="button" id="papergenerate" value="Generate" onclick="ninja.wallets.paperwallet.build(document.getElementById('paperlimit').value * 1, document.getElementById('paperlimitperpage').value * 1, !document.getElementById('paperart').checked, document.getElementById('paperpassphrase').value);" />-->
+								<button id="papergenerate" onclick="generateFromAdvanced()">Generate</button>
+							</span>
+					</div>
 						
 						
 						<span style="display:none;"><label id="paperlabeladdressesperpage" for="paperlimitperpage">Addresses per page:</label> <input type="text" id="paperlimitperpage" /></span>
 					</div>
+				<div onclick="window.print();" id="stepThreePrint">
+				Step Three - <div class="print-btn">Print</div>	
+				</div>						
 				<div id="paperkeyarea"></div>
 				<div id="singlesafety">
 						<p id="singletip1"><b>A Bitcoin Cash (BCH) wallet</b> is as simple as a single pairing of a Bitcoin Cash (BCH) address with its corresponding Bitcoin Cash (BCH) private key. Such a wallet has been generated for you in your web browser and is displayed above.</p>
@@ -7879,6 +8258,10 @@ ninja.publicKey = {
 			ninja.tab.select(walletType)
 		}
 		document.getElementById("generate").style.display = "none";
+
+		// Show the Select Design Panel after seed generation is complete, but hide the rest of the interface
+		document.getElementById("stepOneSelectStyle").style.display = "block";
+		document.getElementById("paperarea").style.display = "none";
 
 		document.getElementById("menu").style.display = "block";
 		document.getElementById("user-alert").innerHTML = "<h2>Wallet Generated</h2>"
@@ -10179,9 +10562,9 @@ ninja.wallets.paperwallet = {
     },
 
 	open: function () {
-		document.getElementById("main").setAttribute("class", "paper"); // add 'paper' class to main div
+		document.getElementById("main").setAttribute("class", "paper"); // add 'paper' class to main div		
 		var paperArea = document.getElementById("paperarea");
-		paperArea.style.display = "block";
+		paperArea.style.display = "block";		
 		var perPageLimitElement = document.getElementById("paperlimitperpage");
 		var limitElement = document.getElementById("paperlimit");
 		var pageBreakAt = (ninja.wallets.paperwallet.useArtisticWallet) ? ninja.wallets.paperwallet.pageBreakAtArtisticDefault : ninja.wallets.paperwallet.pageBreakAtDefault;
@@ -10222,6 +10605,7 @@ ninja.wallets.paperwallet = {
 		if (ninja.wallets.paperwallet.encrypt) {
 			if (passphrase == "") {
 				alert(ninja.translator.get("bip38alertpassphraserequired"));
+				document.getElementById('stepThreePrint').style.display = "none"
 				return;
 			}
 			document.getElementById("busyblock").className = "busy";
@@ -10464,8 +10848,23 @@ ninja.wallets.paperwallet = {
 			case '.1':
 			  denomBCH = '0.1 BCH'
 			  break;
+			case '.25':
+			  denomBCH = '0.25 BCH'
+			  break;
+			case '.5':
+			  denomBCH = '0.5 BCH'
+			  break;
+			case '.75':
+			  denomBCH = '0.75 BCH'
+			  break;
 			case '1':
 			  denomBCH = '1 BCH'
+			  break;
+			case '5':
+			  denomBCH = '5 BCH'
+			  break;
+			case '10':
+			  denomBCH = '10 BCH'
 			  break;
 			default:
 			  denomBCH = ''
@@ -10564,6 +10963,14 @@ ninja.wallets.paperwallet = {
 		document.getElementById("paperpassphrase").disabled = !element.checked;
 		ninja.wallets.paperwallet.encrypt = element.checked;
 		ninja.wallets.paperwallet.resetLimits();
+		// Show the Generate button if hidden
+    var genEncBtn = document.getElementById('papergenerate')
+		if (element.checked) {
+			genEncBtn.style.display = 'block'
+		}
+		else {
+			genEncBtn.style.display = 'none'
+		}
 	},	
 
 	resetLimits: function () {
@@ -10983,7 +11390,7 @@ ninja.wallets.vanitywallet = {
 			document.getElementById("detailbip38toggle").style.display = "none";
 			var passphrase = document.getElementById("detailprivkeypassphrase").value.toString()
 			if (passphrase == "") {
-				alert(translator.get("bip38alertpassphraserequired"));
+				alert(translator.get("bip38alertpassphraserequired"));							
 				return;
 			}
 			document.getElementById("busyblock").className = "busy";
