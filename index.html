@@ -10,7 +10,7 @@
   
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link href="css/paper-wallet.css" rel="stylesheet" media="screen">    
+  <link href="css/paper-wallet.css?version-1.2" rel="stylesheet" media="screen">    
   <link rel="icon" type="image/png" href="https://www.bitcoin.com/wp-content/uploads/2016/01/btc_fav.png">
   
   <!-- Open Graph tags for Facebook Shares -->
@@ -44,14 +44,55 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-<div class="section-1">
+<div class="section-1 section-1-mbl">
   <div class="container">     
     <div class="row">
       <div class="col-md-12">
-        <h3 class="h3-line">A fun and secure way to store your Bitcoin Cash (BCH) offline</h3> 
-        <h1>Bitcoin Cash (BCH) Paper Wallets</h1>  
-        <a class="btn btn-primary" href="cashwallet.html">Generate Wallet Now</a>      
+        <h3 class="h3-line">A fun and secure way to store your Bitcoins offline</h3> 
+        <h1>Bitcoin Paper Wallets</h1>  
+        <a class="btn btn-primary" href="cashwallet.html">Generate Wallet Now</a>  
+        <a class="security-recs" href="#security">Review Our Security Recommendations</a>      
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-section">
+  <div class="container">     
+    <div class="row">
+      <div class="col-md-12">
+        
+        <h5>Paper Wallet Design Contest</h5><h4>FEATURED</h4>
+        <p>Ready to make your own paper wallet? We are hosting a fun community contest for the best paper wallet designs! Download our template and get creative! The winning entry will receive $100 USD of BCH and be featured on our page. Email your designs, as a .png, to papercontest@bitcoin.com, and we will pick the winners on November 5th, 2018.</p>
+        <a class="btn btn-primary" href="img/bitcoin-com-paper-wallet-template.psd" download>Photoshop Template</a> 
+        <a class="btn btn-primary" href="img/bitcoin-com-paper-wallet-template.png" download>PNG Template</a> 
+        <!-- Button trigger modal -->
+<button type="button" class="rules-link" data-toggle="modal" data-target="#paperwalletrules">
+  Contest Rules
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="paperwalletrules" tabindex="-1" role="dialog" aria-labelledby="paperwalletrules" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paperwalletrulesTitle">Bitcoin.com Paper Wallet Design Contest Rules</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       The Bitcoin.com paper wallet design contest is open to anyone in the world. To enter simply send your paper wallet design to the provided email address. You can send multiple designs, but we ask each participate send no more than three entries. By participating in this contest you give Bitcoin.com permission to use your design for any current or future paper wallet related web pages or promotions, and to allow your design to be featured as an option on our paper wallet generator site. All entries must be received before November 1st 2018 and we will select and notify winners on November 5th, 2018. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>     
+      </div>
+
     </div>
   </div>
 </div>
@@ -69,7 +110,7 @@
       </div>
 
       <div class="col-md-5">
-        <img src="img/paper-wallet.png" class="paper-wallet-img">
+        <img src="img/paper-wallets.jpg" class="paper-wallet-img">
       </div>
 
     </div>
@@ -87,7 +128,7 @@
       <div class="col-md-4 features">
         <img class="featured-img" src="img/vault.png">
         <h3 class="features-h1">Cold Storage</h3>
-        <p>Paper wallets allow you to store Bitcoin Cash (BCH) completely offline. For best security, we recommend <a href="https://github.com/Bitcoin-com/paperwallet.bitcoin.com/archive/master.zip">downloading the source code</a> and generating the seed from an offline laptop.</p> 
+        <p>Paper wallets allow you to store bitcoin completely offline. For best security, we recommend <a href="https://github.com/pointbiz/bitaddress.org/archive/v3.3.0.zip">downloading the source code</a> and generating the seed from an offline laptop.</p> 
       </div>
 
       <div class="col-md-4 features">
@@ -99,7 +140,7 @@
       <div class="col-md-4 features">
         <img class="featured-img" src="img/spend.png">
         <h3 class="features-h1">Convenient Spending</h3>
-        <p>Spend by scanning the paper wallet’s private key with the <a href="https://wallet.bitcoin.com/">Bitcoin.com wallet,</a> or like physical cash (great for gift cards).</p> 
+        <p>Spend by scanning the paper wallet’s private key with the Bitcoin.com wallet, or like physical cash (great for gift cards).</p> 
       </div>
 
     </div>
@@ -147,8 +188,74 @@
 </div>
 
 
+<div class="section-security" id="security">
+  <div class="container">     
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Extra Security Tips</h2>
+          <p>Our paper wallet is generated using a browser-side random address generator. This means the wallet is created in your browser. No data is transmitted to our servers or across the web. Generally, it is acceptably safe to use as is. However, if you are using the wallet for larger amounts or just want to ensure extra security please take these tips into consideration.</p> 
+      </div>
+      </div>
+      <div class="row security-tips">
+      <div class="col-md-2 security-img-ctn">
+          <img class="security-img" src="img/wireless.png">
+      </div>
+          <div class="security-text col-md-10">
+            <h3>Run Offline</h3>
+            <p>Running the generator off a live site presents bad actors the potential to intercept your paper wallet's private key. It's not likely, but to mitigate the risk we highly recommend downloading the page files from our Github first. Then turn off your internet connection and run the page locally. Just open the downloaded zip and open the index.html file in your browser. <a href="https://github.com/Bitcoin-com/paperwallet.bitcoin.com/archive/master.zip">Download Generator</a></p> 
+          </div>
+      </div>
 
-<div class="section-3">
+      <div class="row security-tips">
+      <div class="col-md-2 security-img-ctn">
+          <img class="security-img" src="img/safe.png">
+      </div>
+          <div class="security-text col-md-10">
+            <h3>Clean Operating System</h3>
+            <p>Make sure you are using a trusted computer free from any viruses or malware. Do not create your wallet in view of any prying eyes or cameras.</p> 
+          </div>
+      </div>
+
+      <div class="row security-tips">
+      <div class="col-md-2 security-img-ctn">
+          <img class="security-img" src="img/printer.png">
+      </div>
+          <div class="security-text col-md-10">
+            <h3>Safe Printer</h3>
+            <p>Again make sure you are using a trusted printer. Do not wirelessly connect with the printer. Use a direct connection instead, and make sure no data is saved in your print queue or on the printer afterwards.</p> 
+          </div>
+      </div>
+
+      <div class="row security-tips">
+      <div class="col-md-2 security-img-ctn">
+          <img class="security-img" src="img/no-save.png">
+      </div>
+          <div class="security-text col-md-10">
+            <h3>Don't Save</h3>
+            <p>Do not save your paper wallet as an image or digital file. Paper cannot be hacked, your computer can be. </p> 
+          </div>
+      </div>
+
+      <div class="row security-tips">
+      <div class="col-md-2 security-img-ctn">
+          <img class="security-img" src="img/cash.png">
+      </div>
+          <div class="security-text col-md-10">
+            <h3>Treat it like Cash</h3>
+            <p>Once your wallet is made and you have sent funds to it, it is essentially like cash. Whoever physically holds it can access the funds. It can be lost, stolen, or destroyed and there is no backup. Take whatever precautions necessary to ensure it stays safe until needed.</p> 
+          </div>
+      </div>
+
+    
+  </div>
+</div>
+
+
+
+
+
+
+<div class="section-4">
   <div class="container">     
     <div class="row">
       <div class="col-md-6">
@@ -193,7 +300,7 @@
               </h4>
             </div>
             <div id="collapse3" class="panel-collapse collapse">
-              <div class="panel-body">Keep your paper wallet in a safe place to prevent unauthorized access to your money. You should choose a place in your home that you exclusively have access to. This can be a safe deposit box, a hidden place in your room, a cabinet, or even a specific page of your favorite book. It's good practice to keep your paper wallet in a watertight bag (e.g. Zip-Loc) or a box where water or other liquids can’t damage it.</div>
+              <div class="panel-body">You don’t want anyone to access your Bitcoins, that’s why you have to keep your paper wallet in a safe place. You should choose a place in your home that you exclusively have access to. This can be a safe deposit box, a hidden place in your room, a cabinet, or even a specific page of your favorite book. It's good practice to keep your paper wallet in a watertight bag (e.g. Zip-Loc) or a box where water or other liquids can’t damage it.</div>
             </div>
           </div>
 
@@ -205,7 +312,7 @@
               </h4>
             </div>
             <div id="collapse4" class="panel-collapse collapse">
-              <div class="panel-body">First, you need a “normal” Bitcoin Cash (BCH) wallet (either an online, exchange or software wallet), which you will use to load your paper wallet. We recommend using <a href="https://wallet.bitcoin.com">our wallet</a> as you can buy Bitcoin Cash (BCH) there with your credit card. After you have the desired amount of Bitcoin Cash (BCH) in your “normal” wallet, you can deposit funds to the paper wallet by scanning the wallet’s public address and sending Bitcoin Cash (BCH) there.</div>
+              <div class="panel-body">First, you need a “normal” Bitcoin wallet (either an online, exchange or software wallet), which you will use to load your paper wallet. We recommend using <a href="https://wallet.bitcoin.com">our wallet</a> as you can buy Bitcoin Cash (BCH) there with your credit card. After you have the desired amount of Bitcoin Cash (BCH) in your “normal” wallet, you can deposit funds to the paper wallet by scanning the wallet’s public address and sending Bitcoin Cash (BCH) there.</div>
             </div>
           </div>
 
@@ -252,7 +359,17 @@
 </div>
 
 
-    
+<script type="text/javascript">
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>    
 <script>var BitcoinMenuWidth = 1400;</script>
 <script type="text/javascript" src="https://menu.cdn.bitcoindotcom.net/the-footer/dist/universal-footer.js"></script>
 <script src="https://menu.cdn.bitcoindotcom.net/the-menu/dist/universal-menu.js"></script>
