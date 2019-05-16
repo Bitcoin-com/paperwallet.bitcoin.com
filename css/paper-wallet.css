@@ -7,12 +7,13 @@ bitcoin.com paper wallet style sheet
 
 ******************************************************************************************************************************************************
 ******************************************************************************************************************************************************/
-
-
-
+@font-face {
+  font-family: Gilroy;
+  src: url('./fonts/gilroy.woff2') format('woff2');
+}
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -26,7 +27,7 @@ body {
 }
 
 h1 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 65px;
 	font-weight: 700; 
 	color: #fff;
@@ -34,7 +35,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
@@ -46,8 +47,8 @@ h2 {
 h2:after {
     content:' ';
     display:block;
-    border:2px solid #fab915;
-    color: #fab915;
+    border:2px solid #0fcb97;
+    color: #0fcb97;
     width: 100px;
     margin-top: 15px;
     border-radius: 4px;
@@ -55,15 +56,15 @@ h2:after {
 }
 
 h3 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 22px;
 	font-weight: 600; 
-	color: #fab915;
+	color: #0fcb97;
 	margin: 0;
 }
 
 p {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 17px;
 	font-weight: 400; 
 	color: #444;
@@ -90,11 +91,11 @@ p {
 
 a, a:hover, a:visited {
   cursor: pointer;
-  color: #fab915;
+  color: #0fcb97;
 }
 
 .section-1 {
-	background-image: url(../img/wallet-header.jpg);
+	background-color: #111724;
 	background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
@@ -117,7 +118,8 @@ a, a:hover, a:visited {
 }
 
 .btn-primary{
-	font-family: 'Montserrat', sans-serif;
+  background:rgba(0, 0, 0, 0) linear-gradient(rgb(43, 191, 150), rgb(43, 191, 150)) repeat scroll 0% 0% !important;
+	font-family: 'Gilroy', sans-serif;
 	font-weight: 700; 
 	color: #fff!important;
 	text-shadow: none!important;
@@ -126,8 +128,8 @@ a, a:hover, a:visited {
 	padding-right: 28px!important;
 	font-size: 18px;
 	text-align: center;
-	border-radius: 100px !important;
-	background-color: #fab915 !important;
+	border-radius: 3px !important;
+	background-color: #0fcb97 !important;  
 	height: 50px;
 	min-width: 140px;
 	line-height: 50px;
@@ -136,8 +138,8 @@ a, a:hover, a:visited {
 	border: none;
 }
 
-.btn-primary:hover {
-	background-color: #E7A603!important;
+.btn-primary:hover {  
+  background: rgba(0, 0, 0, 0) linear-gradient(rgb(21, 214, 160), rgb(10, 193, 142)) repeat scroll 0% 0% !important;
 	transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
@@ -176,8 +178,8 @@ svg.page-hero-shape {
 .section-security {
 	padding: 50px 0 50px 0;
 	background-color: #000;
-	border-top: 15px solid #fab915;
-	border-bottom: 15px solid #fab915;
+	border-top: 15px solid #0fcb97;
+	border-bottom: 15px solid #0fcb97;
 	background:url(
 
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVzWKwREAMAyCzG6M7W7pean8QAdYfWxrGiLAhUqOI2mzlAdX8g9l8quBnQAAAABJRU5ErkJggg==
@@ -201,7 +203,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVz
 }
 
 .security-recs {
-	color: #fab915;
+	color: #0fcb97;
 	font-size: 18px;
 	font-weight: 600;
 	margin-left: 30px;
@@ -236,7 +238,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVz
 	font-size: 40px;
 	padding: 0;
 	vertical-align: middle;
-	border-right: 1px solid #fab915;
+	border-right: 1px solid #0fcb97;
 	color: #444;
 	margin-top: 15px;
 }
@@ -292,7 +294,7 @@ body #universal-footer {
     display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #fab915;
+	background-color: #0fcb97;
 	background:url(
 
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2O8OJXjv6YKLwMucP3OZwbGXztF/4MY2BTCxMGKQKagK0TmwxUhK0TXgKIIm4kgMQAvbiWPqdTsyAAAAABJRU5ErkJggg==
@@ -301,7 +303,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 .featured-section h4 {
 	background-color: #f80824;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 10px;
 	font-weight: 700; 
 	color: #fff;
@@ -320,7 +322,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 
 .featured-section h5 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
@@ -432,8 +434,13 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 	
 }
 
-
-
+/* Universal Menu Over-rides */
+.kZOqIE {
+  font-size: 16px !important;
+}
+.styled__Links-sc-1ptc0g7-7 > a > span {
+  font-size: 14px !important;
+}
 
 
 
