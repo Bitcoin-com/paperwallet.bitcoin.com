@@ -43,7 +43,7 @@ h2 {
 	margin-bottom: 28px;
 }
 
-
+/* Remove previous design h2 underlines
 h2:after {
     content:' ';
     display:block;
@@ -54,6 +54,7 @@ h2:after {
     border-radius: 4px;
     -webkit-border-radius: 4px;
 }
+*/
 
 h3 {
 	font-family: 'Gilroy', sans-serif;
@@ -180,10 +181,7 @@ svg.page-hero-shape {
 	background-color: #000;
 	border-top: 15px solid #0fcb97;
 	border-bottom: 15px solid #0fcb97;
-	background:url(
-
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVzWKwREAMAyCzG6M7W7pean8QAdYfWxrGiLAhUqOI2mzlAdX8g9l8quBnQAAAABJRU5ErkJggg==
-    ) repeat;
+	background-color: #111724;
 }
 
 .section-security h2, .section-security p  {
