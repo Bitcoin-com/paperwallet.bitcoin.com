@@ -6383,6 +6383,11 @@ Bitcoin.Util = {
 	</script>
 	<style type="text/css">
 
+    @font-face {
+  font-family: Gilroy;
+  src: url('./fonts/gilroy.woff2') format('woff2');
+}
+
 #paperHeader {
 	background-color: #111724;
 	background-size:cover;
@@ -6427,7 +6432,7 @@ hr { margin: 20px 0; border-top: 2px dashed #008000; }
 .keyarea .qrcode_public { display: inline-block; float: left; }
 .keyarea .qrcode_private { display: inline-block; position: relative; top: 28px; float: right; }
 .pubkeyhex { word-wrap: break-word; }
-body { font-family: Montserrat, sans-serif; }
+body { font-family: Gilroy, sans-serif; }
 body, html { height: 99%; margin:0;}
 .faqs ol { padding: 0 0 0 25px; }
 .faqs li { padding: 3px 0; }
@@ -6455,9 +6460,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #wallets { clear: both; }
 #btcaddress, #btcprivwif, #detailaddress, #detailaddresscomp, #detailprivwif, #detailprivwifcomp { font-family: monospace; font-size: 1.25em; }
 #seedpoolarea { display: none; }
-#seedpooldisplay {  font-family: Montserrat; font-size: 0.85em; padding: 15px 5px 0 5px; word-wrap: break-word; }
+#seedpooldisplay {  font-family: Gilroy; font-size: 0.85em; padding: 15px 5px 0 5px; word-wrap: break-word; }
 .seedpoint { width: 6px; height: 6px; display: block; border-radius: 3px; background-color: #0fcb97; position: absolute; z-index: 10; }
-#generate { font-family: Montserrat; font-size: 1.25em; text-align: left; position: relative; padding: 15px; background-color:#eeeeee; border-radius:5px; clear: both; }
+#generate { font-family: Gilroy; font-size: 1.25em; text-align: left; position: relative; padding: 15px; background-color:#eeeeee; border-radius:5px; clear: both; }
 #generate span { padding: 5px 5px 0 5px; }
 #generatekeyinput { position: relative; z-index: 20; border: 1px solid #000000; border-radius: 2px; background-color:#fff; color:#000; padding: 5px;}
 #keyarea { height: 250px; border: 2px solid #0fcb97; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top:none;}
@@ -6608,7 +6613,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
   }
 
   .bip-encrypted {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gilroy', sans-serif;
     padding: 2px 0px;
     background-color: #000;
     color: #0fcb97;
@@ -6628,7 +6633,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
   }
 
   .denomination {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gilroy', sans-serif;
     color: #0fcb97;
     font-weight: 400;
     letter-spacing: 2px;
@@ -6905,12 +6910,11 @@ input[type=checkbox] { position: relative; z-index: 20; }
   border-bottom-right-radius: 5px;
 }
 
+
 	</style>
 
 	<!-- Include Cash Address Support -->
 	<script src="js/bchaddrjs-0.2.1.min.js"></script>
-	<!-- Montserrat Font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
 
 </head>
 <body onclick="SecureRandom.seedTime();" onmousemove="ninja.seeder.seed(event);">
