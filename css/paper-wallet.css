@@ -1,5 +1,3 @@
-
-
 /******************************************************************************************************************************************************
 ******************************************************************************************************************************************************
 
@@ -7,10 +5,6 @@ bitcoin.com paper wallet style sheet
 
 ******************************************************************************************************************************************************
 ******************************************************************************************************************************************************/
-@font-face {
-  font-family: Gilroy;
-  src: url('./fonts/gilroy.woff2') format('woff2');
-}
 
 body {
 	font-family: 'Gilroy', sans-serif;
@@ -119,8 +113,7 @@ a, a:hover, a:visited {
 }
 
 .btn-primary{
-  background:rgba(0, 0, 0, 0) linear-gradient(rgb(43, 191, 150), rgb(43, 191, 150)) repeat scroll 0% 0% !important;
-	font-family: 'Gilroy', sans-serif;
+  font-family: 'Gilroy', sans-serif;
 	font-weight: 700; 
 	color: #fff!important;
 	text-shadow: none!important;
@@ -130,7 +123,8 @@ a, a:hover, a:visited {
 	font-size: 18px;
 	text-align: center;
 	border-radius: 3px !important;
-	background-color: #0fcb97 !important;  
+	background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFGSURBVDgRjZPrccQgEIOBcQvpf9JU2nH0STqM8yuY4dZaaV/45tfP9z3GPRYHe41b58TglH1x6ncsjqlnyaF1jwsuS2StqARpG4HnOLeIMoTDeavgQAQ9VdClQuqkogTBINRfskoNuQHHVKniObTJzv7KhbcpGtAIR2pWjCAt2mQjFBWXTpOpd5LUDgncKRWscmV84iCFp8Jmc9EUSClp0AhEUMeJSm+ZD0n1uEEjKAilXDLETu8g+PH1BpkPAAg/sBcdp3e7UImUpCGJvDlY2tfuq6JPimbPfIjj+SRH7ouYzY6Rgk6k5Me1U7Sc5AJ1HErtl+m+/jEfJFG10wDMx47XfIT0uu1LzQiOLuBkqokklyJpZ+AC+5FU9b7KfFr+fyX/GXkjO7ILOrJTHZfyqKACGuHlchRBnqovRWj6wmA98rwfyC/Ypqs3+134cwAAAABJRU5ErkJggg=="); 
+  transition: all 300ms ease-in-out 0s;
 	height: 50px;
 	min-width: 140px;
 	line-height: 50px;
@@ -140,12 +134,11 @@ a, a:hover, a:visited {
 }
 
 .btn-primary:hover {  
-  background: rgba(0, 0, 0, 0) linear-gradient(rgb(21, 214, 160), rgb(10, 193, 142)) repeat scroll 0% 0% !important;
-	transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAE5SURBVDgRbZNZcsAgDEMhk2P0/mfowfpP9Z4hywRPJhgvkgxJ//n7HS12jpY1z8GrdRzMCOsYpEbrva9UIoSpT3GnqZ20JFg1xMSp9uQxu3To0PEtRQXSFQywLb5xiDyKo6co+l0crx0XMsxYdeGQ+uohOpGnI3ui2gkqio4aOHMVxcjIl9R4ng+i4D2/7MaDdOtJ7dSTDmVsuuDmfIo07SWH04DodSkKTTBHZ2Z2ZVN6giG7XMxE3TOC+IWM1K8eZVgTZkwZganiiYzmiYznnTLh4ZikCvk1FyDg1BIHMPV48gICKw5FRqyGQmi+Q2piG/GEa8A4SpUim+19Uf7Uw262XxQThxSmeGtAJrlDNoXUdQWOxVXald276/sXKB6Y0lNydiM74DooNu//nUucmtekYd98WvBg/0Hyy0dGEw7mAAAAAElFTkSuQmCC");
+  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
-
-.btn {
-	background: none;
+.btn-primary:active {
+  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFMSURBVDgRlZJRbsMwDENtI9i9d6SdMOUj6SYp+jOjcB2JpCjZ8+fv9xxai+08z7HY5pxjzTEJKsU/qSGoU0SgOXJhHOFTy4JISAcw9K4F1SkHlDeGEof0HTysH5arQk/qix9I9iMJL2OAXw4jLD/o1I86BRNSrRKKVfzQLukjyu6i83n48ehAZnTIXizR2xbjTWo9/GBfRZNLdfnIIX60i5renTJ2syQmcKo+58NAy5KNVmDOtbEjnZiH0PnUKcoMavsR0W8jM5ROUkI7wvbxfsTIfHR4vx/q/88PDFaeqP3sLrDgVP/lue5tnuhtPiCVVgQ/tKMNfG8ZY4rod9fhU7Fb7/4WhuaSMsbKOfWWjYHuVIv6c9tAoH4oYbae334tR4vvtypwML4UJf02UNRZvdfP1YVOLgELLc/HEUNhEX6PxSkCt/vSY7Owci/2BnNqlHfFbgAAAABJRU5ErkJggg==");
 }
 
 .section-2 {
