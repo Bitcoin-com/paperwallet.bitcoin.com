@@ -1,5 +1,3 @@
-
-
 /******************************************************************************************************************************************************
 ******************************************************************************************************************************************************
 
@@ -8,11 +6,8 @@ bitcoin.com paper wallet style sheet
 ******************************************************************************************************************************************************
 ******************************************************************************************************************************************************/
 
-
-
-
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -26,7 +21,7 @@ body {
 }
 
 h1 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 65px;
 	font-weight: 700; 
 	color: #fff;
@@ -34,7 +29,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
@@ -42,28 +37,29 @@ h2 {
 	margin-bottom: 28px;
 }
 
-
+/* Remove previous design h2 underlines
 h2:after {
     content:' ';
     display:block;
-    border:2px solid #fab915;
-    color: #fab915;
+    border:2px solid #0fcb97;
+    color: #0fcb97;
     width: 100px;
     margin-top: 15px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
 }
+*/
 
 h3 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 22px;
 	font-weight: 600; 
-	color: #fab915;
+	color: #0fcb97;
 	margin: 0;
 }
 
 p {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 17px;
 	font-weight: 400; 
 	color: #444;
@@ -90,11 +86,11 @@ p {
 
 a, a:hover, a:visited {
   cursor: pointer;
-  color: #fab915;
+  color: #0fcb97;
 }
 
 .section-1 {
-	background-image: url(../img/wallet-header.jpg);
+	background-color: #111724;
 	background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
@@ -117,7 +113,7 @@ a, a:hover, a:visited {
 }
 
 .btn-primary{
-	font-family: 'Montserrat', sans-serif;
+  font-family: 'Gilroy', sans-serif;
 	font-weight: 700; 
 	color: #fff!important;
 	text-shadow: none!important;
@@ -126,8 +122,9 @@ a, a:hover, a:visited {
 	padding-right: 28px!important;
 	font-size: 18px;
 	text-align: center;
-	border-radius: 100px !important;
-	background-color: #fab915 !important;
+	border-radius: 3px !important;
+	background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFGSURBVDgRjZPrccQgEIOBcQvpf9JU2nH0STqM8yuY4dZaaV/45tfP9z3GPRYHe41b58TglH1x6ncsjqlnyaF1jwsuS2StqARpG4HnOLeIMoTDeavgQAQ9VdClQuqkogTBINRfskoNuQHHVKniObTJzv7KhbcpGtAIR2pWjCAt2mQjFBWXTpOpd5LUDgncKRWscmV84iCFp8Jmc9EUSClp0AhEUMeJSm+ZD0n1uEEjKAilXDLETu8g+PH1BpkPAAg/sBcdp3e7UImUpCGJvDlY2tfuq6JPimbPfIjj+SRH7ouYzY6Rgk6k5Me1U7Sc5AJ1HErtl+m+/jEfJFG10wDMx47XfIT0uu1LzQiOLuBkqokklyJpZ+AC+5FU9b7KfFr+fyX/GXkjO7ILOrJTHZfyqKACGuHlchRBnqovRWj6wmA98rwfyC/Ypqs3+134cwAAAABJRU5ErkJggg=="); 
+  transition: all 300ms ease-in-out 0s;
 	height: 50px;
 	min-width: 140px;
 	line-height: 50px;
@@ -136,13 +133,12 @@ a, a:hover, a:visited {
 	border: none;
 }
 
-.btn-primary:hover {
-	background-color: #E7A603!important;
-	transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+.btn-primary:hover {  
+  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAE5SURBVDgRbZNZcsAgDEMhk2P0/mfowfpP9Z4hywRPJhgvkgxJ//n7HS12jpY1z8GrdRzMCOsYpEbrva9UIoSpT3GnqZ20JFg1xMSp9uQxu3To0PEtRQXSFQywLb5xiDyKo6co+l0crx0XMsxYdeGQ+uohOpGnI3ui2gkqio4aOHMVxcjIl9R4ng+i4D2/7MaDdOtJ7dSTDmVsuuDmfIo07SWH04DodSkKTTBHZ2Z2ZVN6giG7XMxE3TOC+IWM1K8eZVgTZkwZganiiYzmiYznnTLh4ZikCvk1FyDg1BIHMPV48gICKw5FRqyGQmi+Q2piG/GEa8A4SpUim+19Uf7Uw262XxQThxSmeGtAJrlDNoXUdQWOxVXald276/sXKB6Y0lNydiM74DooNu//nUucmtekYd98WvBg/0Hyy0dGEw7mAAAAAElFTkSuQmCC");
+  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
-
-.btn {
-	background: none;
+.btn-primary:active {
+  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFMSURBVDgRlZJRbsMwDENtI9i9d6SdMOUj6SYp+jOjcB2JpCjZ8+fv9xxai+08z7HY5pxjzTEJKsU/qSGoU0SgOXJhHOFTy4JISAcw9K4F1SkHlDeGEof0HTysH5arQk/qix9I9iMJL2OAXw4jLD/o1I86BRNSrRKKVfzQLukjyu6i83n48ehAZnTIXizR2xbjTWo9/GBfRZNLdfnIIX60i5renTJ2syQmcKo+58NAy5KNVmDOtbEjnZiH0PnUKcoMavsR0W8jM5ROUkI7wvbxfsTIfHR4vx/q/88PDFaeqP3sLrDgVP/lue5tnuhtPiCVVgQ/tKMNfG8ZY4rod9fhU7Fb7/4WhuaSMsbKOfWWjYHuVIv6c9tAoH4oYbae334tR4vvtypwML4UJf02UNRZvdfP1YVOLgELLc/HEUNhEX6PxSkCt/vSY7Owci/2BnNqlHfFbgAAAABJRU5ErkJggg==");
 }
 
 .section-2 {
@@ -176,12 +172,9 @@ svg.page-hero-shape {
 .section-security {
 	padding: 50px 0 50px 0;
 	background-color: #000;
-	border-top: 15px solid #fab915;
-	border-bottom: 15px solid #fab915;
-	background:url(
-
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVzWKwREAMAyCzG6M7W7pean8QAdYfWxrGiLAhUqOI2mzlAdX8g9l8quBnQAAAABJRU5ErkJggg==
-    ) repeat;
+	border-top: 15px solid #0fcb97;
+	border-bottom: 15px solid #0fcb97;
+	background-color: #111724;
 }
 
 .section-security h2, .section-security p  {
@@ -201,7 +194,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVz
 }
 
 .security-recs {
-	color: #fab915;
+	color: #0fcb97;
 	font-size: 18px;
 	font-weight: 600;
 	margin-left: 30px;
@@ -236,7 +229,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKElEQVQYVz
 	font-size: 40px;
 	padding: 0;
 	vertical-align: middle;
-	border-right: 1px solid #fab915;
+	border-right: 1px solid #0fcb97;
 	color: #444;
 	margin-top: 15px;
 }
@@ -292,7 +285,7 @@ body #universal-footer {
     display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #fab915;
+	background-color: #0fcb97;
 	background:url(
 
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2O8OJXjv6YKLwMucP3OZwbGXztF/4MY2BTCxMGKQKagK0TmwxUhK0TXgKIIm4kgMQAvbiWPqdTsyAAAAABJRU5ErkJggg==
@@ -301,7 +294,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 .featured-section h4 {
 	background-color: #f80824;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 10px;
 	font-weight: 700; 
 	color: #fff;
@@ -320,7 +313,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 
 .featured-section h5 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Gilroy', sans-serif;
 	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
@@ -427,14 +420,6 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 }
 
 }
-
-@media (max-width: 360px) {
-	
-}
-
-
-
-
 
 
 
