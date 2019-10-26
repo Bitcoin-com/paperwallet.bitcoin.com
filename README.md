@@ -1,10 +1,8 @@
-# Bitcoin.com Paper Wallet
+# Eurocoin Paper Wallet
 
-The Bitcoin.com Paper Wallet Landing Page
+A client-side Eurocoin wallet generator producing customizable paper wallets.
 
-A client-side Bitcoin Cash (BCH) wallet generator producing customizable paper wallets.
-
-The Bitcoin.com Paper Wallet is based on the open source [bitaddress.org repository.](https://github.com/pointbiz/bitaddress.org) Private Keys are generated client-side. For better security, download a local copy and run on an offline machine. 
+The Paper Wallet is based on the open source [bitaddress.org repository.](https://github.com/pointbiz/bitaddress.org) Private Keys are generated client-side. For better security, download a local copy and run on an offline machine. 
 
 The bitaddress.org software is available under The MIT License (MIT) Copyright (c) 2011-2013 bitaddress.org
 
