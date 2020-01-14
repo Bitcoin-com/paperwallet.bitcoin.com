@@ -6390,7 +6390,7 @@ Bitcoin.Util = {
 }
 
 #paperHeader {
-	background-color: #111724;
+	background-color: #d90000;
 	background-size:cover;
 }
 
@@ -6452,7 +6452,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 #progress-bar {  
   font-size: 20px;    
   width: 0%;
-  background-color: #0fcb97;
+  background-color: #d90000;
   color: #000000;
   padding:3px;
   border-radius:5px;
@@ -6930,34 +6930,13 @@ input[type=checkbox] { position: relative; z-index: 20; }
 
 	<header id="paperHeader">
 		<h1>
-		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.2387695px" height="70.4990234px" viewBox="0 0 58.2387695 70.4990234" enable-background="new 0 0 58.2387695 70.4990234" xml:space="preserve">
-		<path d="M57.7895508,18.8398438L39.3989258,0.4487305C39.1098633,0.1616211,38.7202148,0,38.3139648,0H4.597168
-			C2.0620117,0,0,2.0629883,0,4.5976563v61.3027344c0,2.5361328,2.0620117,4.5986328,4.597168,4.5986328h49.0429688
-			c2.5351563,0,4.5986328-2.0625,4.5986328-4.5986328V19.9238281C58.2387695,19.5180664,58.0766602,19.1279297,57.7895508,18.8398438
-			 M39.847168,5.2329102L53.0053711,18.390625H39.847168V5.2329102z M53.6401367,67.4335938H4.597168
-			c-0.8447266,0-1.5317383-0.6875-1.5317383-1.5332031V4.5976563c0-0.8447266,0.6870117-1.5327148,1.5317383-1.5327148h32.1845703
-			v16.8588867c0,0.8461914,0.6865234,1.5322266,1.5322266,1.5322266h16.859375v44.4443359
-			C55.1733398,66.7460938,54.4848633,67.4335938,53.6401367,67.4335938"></path>
-		<path d="M10.7280273,26.0541992h18.390625c0.8461914,0,1.5332031-0.6860352,1.5332031-1.5332031
-			c0-0.8457031-0.6870117-1.5317383-1.5332031-1.5317383h-18.390625c-0.8461914,0-1.5332031,0.6860352-1.5332031,1.5317383
-			C9.1948242,25.3681641,9.8818359,26.0541992,10.7280273,26.0541992"></path>
-		<path d="M47.5102539,32.1845703H10.7280273c-0.8461914,0-1.5332031,0.6860352-1.5332031,1.5327148
-			c0,0.8461914,0.6870117,1.5322266,1.5332031,1.5322266h36.7822266c0.8457031,0,1.5332031-0.6860352,1.5332031-1.5322266
-			C49.043457,32.8706055,48.355957,32.1845703,47.5102539,32.1845703"></path>
-		<path d="M47.5102539,41.3798828H10.7280273c-0.8461914,0-1.5332031,0.6855469-1.5332031,1.5332031
-			c0,0.8457031,0.6870117,1.53125,1.5332031,1.53125h36.7822266c0.8457031,0,1.5332031-0.6855469,1.5332031-1.53125
-			C49.043457,42.0654297,48.355957,41.3798828,47.5102539,41.3798828"></path>
-		<path d="M47.5102539,50.5751953H10.7280273c-0.8461914,0-1.5332031,0.6865234-1.5332031,1.5332031
-			c0,0.8457031,0.6870117,1.5322266,1.5332031,1.5322266h36.7822266c0.8457031,0,1.5332031-0.6865234,1.5332031-1.5322266
-			C49.043457,51.2617188,48.355957,50.5751953,47.5102539,50.5751953"></path>
-		</svg>
 			<span>Bitcoin Cash (BCH) Paper Wallet</span>
 		</h1>
 	</header>
 	<div id="busyblock"></div>
 	<div id="main">
 		<div id="user-alert">
-			<h2>Move your mouse to generate a Bitcoin Cash (BCH) address</h2>
+			<h2>Generating Bitcoin Cash (BCH) Address</h2>
 		</div>
 		<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 		<div id="testnet"></div>
@@ -6974,7 +6953,6 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		</ul>		
 		
 		<div id="generate">
-			<span id="generatelabelbitcoinaddress">Generating Bitcoin Cash (BCH) Address...</span><br /><br />
 			<span id="generatelabelmovemouse">Move your mouse around to add some extra randomness... </span><span style="display:none;" id="mousemovelimit"></span><br /><br />
 			<span id="generatelabelkeypress">No mouse? Type some random characters into this textbox</span>: <input type="text" id="generatekeyinput" placeholder="&nbsp;Type here" onkeydown="ninja.seeder.seedKeyPress(event);" /><br />
 			<div id="seedpooldisplay"></div>
@@ -7034,7 +7012,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			<style>
 			#stepOneSelectStyle {
 				display: none;
-				height: 929px;
+				height: 340px;
 				-webkit-transition: height 0.5s ease-in-out;
 			  -moz-transition: height 0.5s ease-in-out;
 			  -ms-transition: height 0.5s ease-in-out;
@@ -7080,12 +7058,12 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			}
 			.style-col:hover {
 				opacity: 1;				
-				background-image: radial-gradient(grey, #0fcb97);
+				background-image: radial-gradient(grey, #fce91c);
 				color: #000;
 			}
 			.selected-design {
 				opacity: 1;
-				background-image: radial-gradient(grey, #0fcb97);
+				background-image: radial-gradient(grey, #fce91c);
 			}
 			.confirm-design {
 				/*Hide button and make inactive until design is selected*/
@@ -7115,9 +7093,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 			}
 			.confirm-design:hover {
 				background-color: #fff;
-				color: #0fcb97;
-				border: 3px solid #0fcb97;
-				background-image: url(img/arrow-in-circle-grn.png);
+				color: #b90000;
+				border: 3px solid #b90000;
+				background-image: url(img/arrow-in-circle-black.png);
 				cursor: pointer;
 			}
 
@@ -7125,7 +7103,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				
 			}
 			.step-header {
-				background-color: #0fcb97;
+				background-color: #fce91c;
 				color: #000;
 				font-weight: 700;
 				padding: 12px;
@@ -7139,7 +7117,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
 
 			#bikeshedDos {
 				display: none;
-				background-color: #0fcb97;
+				background-color: #b90000;
 				color: #000;
 				font-weight: 700;
 				padding: 12px;
@@ -7151,14 +7129,14 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				padding-left:34%;
 			}
 			#bikeshedDos:hover {
-				background-color: #111724;
+				background-color: #fce91c;
 				color: #fff;
-				background-image: url(img/arrow-in-circle-white.png);
+				background-image: url(img/arrow-in-circle-black.png);
 				cursor: pointer;
 			}
 
 			#stepThreePrint {
-				background-color: #0fcb97;
+				background-color: #b90000;
 				color: #000;
 				font-weight: 700;
 				padding: 12px;
@@ -7170,9 +7148,9 @@ input[type=checkbox] { position: relative; z-index: 20; }
 				padding-left:34%;
 			}
 			#stepThreePrint:hover {
-				background-color: #111724;
+				background-color: #fce91c;
 				color: #fff;
-				background-image: url(img/arrow-in-circle-white.png);
+				background-image: url(img/arrow-in-circle-black.png);
 				cursor: pointer;
 			}
 			.print-btn {
@@ -7201,10 +7179,10 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								Select and Continue
 							</div>
 							<div class="style-label">
-								Bitcoin.com
+								Chinese New Year 2020
 							</div>
 							<div class="style-example">
-								<img src="img/2019-paper-wallet-dark-blue.png">
+								<img src="img/Chinese-New-year-paper-wallet.png">
 							</div>
 						</div>
 						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-right">
@@ -7212,14 +7190,14 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								Select and Continue
 							</div>
 							<div class="style-label">
-							Light
+							Bitcoin.com
 						</div>
 						<div class="style-example">
 							<img src="img/2019-paper-wallet-light.png">
 						</div>
 						</div>
 					</div>										
-					<div class="style-row">
+					<!-- <div class="style-row">
 						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-left">
 							<div onclick="designConfirmed(this)" data-wallet-skin="nostep" class="confirm-design">
 								Select and Continue
@@ -7242,8 +7220,8 @@ input[type=checkbox] { position: relative; z-index: 20; }
 								<img src="img/2019-paper-wallet-satoshi.png">
 							</div>
 						</div>
-					</div>
-					<div class="style-row">
+					</div> -->
+					<!-- <div class="style-row">
 						<div onmouseover="toggleSelectedDesign(this)" onclick="toggleSelectedDesign(this)" class="style-col sc-left">
 							<div onclick="designConfirmed(this)" data-wallet-skin="vietnam" class="confirm-design">
 								Select and Continue
@@ -7266,7 +7244,7 @@ input[type=checkbox] { position: relative; z-index: 20; }
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M430.9 393.4l-119.6-119-58.1-57.9-13.4-13.3c15.9-40.6 7.1-88.2-26.6-121.7-35.4-35.3-88.5-42.3-131-22.9l76.1 75.8-53.1 52.9-77.9-75.8C6.2 153.8 15 206.7 50.4 242c33.6 33.5 81.4 42.3 122.1 26.5l14.4 14.3L81.7 388c-7.6 5.7-7.6 19 1.9 26.6l43.8 43.7c7.6 7.6 19.1 7.6 26.7 0l96.1-112.4 113.4 112.9c7.1 7.1 17.7 7.1 24.8 0l40.7-40.6c8.9-7.1 8.9-19.5 1.8-24.8z"/><path d="M494.4 216.6l-34.5-34.1c-2.2-2.2-5.8-2.2-8 0l-3.7 3.7-18.5-15.8s1.2-10-4.9-18.7c-6.2-8.7-16.1-19.8-23.2-26.9-7.1-7-34.1-33.9-69.7-51.4C296.2 55.7 271 48 241 48v29.7s28.7 16.6 45.1 29.7c16.3 13.1 16.8 59.5 16.8 59.5l-28.5 28.5 56.5 56.1 31-36.3c12.9-3.5 23.8-3.8 30.2-.3l13.7 13.3-9.6 9.5c-2.2 2.2-2.2 5.7 0 7.9l34.5 34.1c2.2 2.2 5.8 2.2 8 0l55.7-55.2c2.1-2.2 2.1-5.8 0-7.9z"/></svg>
               </div>
             </div>					
-					</div>
+					</div> -->
 				</div>
 				
 				<div id="paperarea">
@@ -10768,7 +10746,7 @@ ninja.wallets.paperwallet = {
 		var denomMenuBCH = denomMenu.options[denomMenu.selectedIndex].value;
 		// Default colors
 		var addressColor = '#ffffff;'
-		var lockArtColor = '#0fcb97;'
+		var lockArtColor = '#fce91c;'
 		var lockArtBgColor = '#000000;'
 		// Display Bip38 Encrypted msg, hidden by default
 		var encryptedDisplay = 'none;'
@@ -10786,7 +10764,8 @@ ninja.wallets.paperwallet = {
 
     case 'default':
       //file resource version: 
-      image = 'img/2019-paper-wallet-dark-blue.png';
+      image = 'img/Chinese-New-year-paper-wallet.png';
+	  lockArtColor='#fce91c;'
       //base64 encoded version:
       break;
 
@@ -10858,7 +10837,7 @@ ninja.wallets.paperwallet = {
 
     default: 
 	    //file resource version:
-	    image = '2019-paper-wallet-dark-blue.png'
+	    image = 'Chinese-New-year-paper-wallet.png'
 	    // Base64 encoded version: 
     }
 

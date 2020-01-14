@@ -46,18 +46,28 @@
   <div class="header-ctn">
     <div id="bitcoincom-uc-navbar" data-languages="false"></div>
     <div class="section-1">
+      <div class="switch-ctn">
+        <h4 class="lang-switch">中文</h4>
+        <label class="switch">
+          <input type="checkbox" onclick="changeColor()">
+          <span class="slider round"></span>
+        </label>
+        <h4 class="lang-switch">English</h4>
+      </div>
       <div class="container">     
-        <div class="row">
+        <div class="row align-middle-flex">
           <div class="col-md-6">
-            <!-- <h3>鼠年</h3>  -->
-            <h1>新年快乐</h1>
-            <!-- <img class="year" src="../img/cny/2020-red.png" /><br/> -->
-            <p>今年，使用我们特别的纸质钱包，为您的朋友和家人提供比特币现金的礼物。</p>
-            <!-- <img class="rat" src="../img/cny/year-of-the-rat-2.png" />   -->
-            <!-- <a class="btn btn-primary" href="cashwallet.html">Generate Wallet Now</a>      -->
+            <h1 class="chinese">新年快乐</h1>
+            <p class="chinese">今年，使用我们特别的纸质钱包，为您的朋友和家人提供比特币现金的礼物。</p>
+            <a class="btn btn-primary chinese" href="../cashwallet-cny.html">立即生成钱包</a>
+            <a class="learn-more-link chinese" href="#learn-more">学到更多</a> 
+            <h1 class="english">Happy New Year!</h1>
+            <p class="english">This year give your friends and family Bitcoin Cash using our special Chinese New Year editiion paper wallets. Print as many as you like and put any amount of BCH on them. Its easy, fast and fun!</p>
+            <a class="btn btn-primary english" href="../cashwallet-cny.html">Generate wallet now</a>
+            <a class="learn-more-link english" href="#learn-more">Learn more</a>     
           </div>
-          <div class="col-md-6">
-            <img class="rat" src="../img/cny/bch-rat-2.png" />  
+          <div class="col-md-6 header-img">
+            <img class="rat" src="../img/cny/bch-rat.png" />  
           </div>
         </div>
       </div>
@@ -65,11 +75,113 @@
   </div> <!--End header ctn -->
 
 
-  <div class="section-2">
+  <div class="section-ad">
+    <div class="container">     
+      <div class="row align-middle-flex">
+        <div class="col-md-12">
+          <a href="https://local.bitcoin.com">
+            <img class="ad chinese" src="../img/cny/ad-chinese.png" />  
+            <img class="ad english" src="../img/cny/ad.png" />  
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-2" id="learn-more">
+    <div class="container">     
+      <div class="row align-middle-flex">
+        <div class="col-md-6 header-img2">
+          <img class="rat" src="../img/cny/chinese-paper-wallet-landing.png" />  
+        </div>
+        <div class="col-md-6">
+          <h2 class="chinese">什么是纸钱包？</h2>
+          <p class="chinese">纸钱包只是一个公共地址，并且是印在纸上的对应私人密钥。您可以将资金发送到公共地址，然后通过扫描私钥访问余额。这是一种物理存储比特币现金并与您喜欢的人共享的独特方法。</p> 
+          <h2 class="english">What is a paper wallet?</h2>
+          <p class="english">A paper wallet is simply a public address and a coresponding private key printed on a piece of paper. You can send funds to the public address and then access the balance by scanning the private key. It is a unique way to physically store Bitcoin Cash and share it with whoever you like.</p>   
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section-3">
     <div class="container">     
       <div class="row">
         <div class="col-md-12">
-          <h2>新年快乐</h2>
+          <h2 class="chinese">如何使用纸钱包</h2>
+          <h2 class="english">How to use a paper wallet</h2>
+        </div>
+        <div class="col-md-4 chinese">
+          <img class="howtoicon" src="../img/cny/icon-2.png" />
+          <h3>1. 印花钱包</h3>
+          <p>使用我们的钱包生成器免费打印任意数量的钱包</p>
+        </div>
+        <div class="col-md-4 chinese">
+          <img class="howtoicon" src="../img/cny/icon-3.png" />
+          <h3>2. 存款资金</h3>
+          <p>将任意数量的比特币现金发送到公共地址</p>
+        </div>
+        <div class="col-md-4 chinese">
+          <img class="howtoicon" src="../img/cny/icon-1.png" />
+          <h3>3. 扫款</h3>
+          <p>使用数字钱包扫描私钥以获取资金</p>
+        </div>
+
+
+
+        <div class="col-md-4 english">
+          <img class="howtoicon" src="../img/cny/icon-2.png" />
+          <h3>1. Print wallet</h3>
+          <p>Print any number of wallets for free using our wallet generator</p>
+        </div>
+        <div class="col-md-4 english">
+          <img class="howtoicon" src="../img/cny/icon-3.png" />
+          <h3>2. Deposit Funds</h3>
+          <p>Send any amount of Bitcoin Cash to the Public address</p>
+        </div>
+        <div class="col-md-4 english">
+          <img class="howtoicon" src="../img/cny/icon-1.png" />
+          <h3>3. Sweep Funds</h3>
+          <p>Using a digital wallet scan the private key to capture the funds</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-4">
+    <div class="container">     
+      <div class="row align-middle-flex">
+        <div class="col-md-6">
+          <h2 class="chinese">在哪里可以买到比特币现金？</h2>
+          <p class="chinese">有很多购买比特币现金的方法。尝试使用Local.bitcoin.com服务，可以使用任何付款方式进行快速的私人交易。或访问buy.bitcoin.com以信用卡立即购买比特币现金。</p>
+          <h2 class="english">Where to buy Bitcoin Cash?</h2>
+          <p class="english">There are many ways to purchase Bitcoin Cash. Try our Local.bitcoin.com service for quick, private transactions that can be made with any payment method. Or visit buy.bitcoin.com to purchase Bitcoin Cash instantly with a credit card.</p>
+          <a class="btn btn-primary" href="cashwallet.html">Local.bitcoin.com</a>
+          <a class="learn-more-link" href="cashwallet.html">Buy.bitcoin.com</a>    
+        </div>
+        <div class="col-md-6 header-img">
+          <img class="rat" src="../img/cny/buy.png" />  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-5">
+    <div class="container">     
+      <div class="row align-middle-flex">
+        <div class="col-md-12 chinese">
+          <h2>准备好制作纸钱包了吗？</h2>
+          <a class="btn btn-primary" href="../cashwallet-cny.html">我们走吧！</a>  
+        </div>
+        <div class="col-md-12 english">
+          <h2>Ready to make your paper wallet?</h2>
+          <a class="btn btn-primary" href="../cashwallet-cny.html">Let's go!</a>  
         </div>
       </div>
     </div>
@@ -89,7 +201,25 @@
         });
     });
 });
-</script>    
+</script>
+<script type="text/javascript">
+
+  function changeColor() {
+      var y = document.getElementsByClassName("english");
+      var x = document.getElementsByClassName("chinese");
+  var i = 0;
+  for(i; i < x.length; i++){
+  
+      if (x[i].style.display === "none") {
+          x[i].style.display = "inline-block";
+          y[i].style.display = "none";
+      } else {
+          x[i].style.display = "none";
+          y[i].style.display = "inline-block";
+      }
+  }
+  }
+  </script>    
 <script src="https://menu.cdn.bitcoindotcom.net/uni/dist/navbar.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
