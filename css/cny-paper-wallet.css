@@ -1,0 +1,370 @@
+/******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+
+bitcoin.com cny paper wallet style sheet
+
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************/
+
+body {
+	font-family: 'Gilroy', sans-serif;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x:hidden;
+	 width: 100%;
+}
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+}
+
+h1 {
+	font-family: 'Gilroy', sans-serif;
+	font-size: 100px;
+	font-weight: 700; 
+	color: #fce91c;
+	/* color: #000; */
+	margin: 0;
+}
+
+h2 {
+	font-family: 'Gilroy', sans-serif;
+	font-size: 36px;
+	font-weight: 700; 
+	color: #fce91c;
+	margin: 0;
+	margin-bottom: 28px;
+}
+
+h3 {
+	font-family: 'Gilroy', sans-serif;
+	font-size: 25px;
+	font-weight: 600; 
+	color: #fce91c;
+	margin: 0;
+}
+
+p {
+	font-family: 'Gilroy', sans-serif;
+	font-size: 20px;
+	font-weight: 400; 
+	color: #fce91c;
+	/* color: #131720; */
+	margin: 0;
+	line-height: 1.7em;
+}
+
+a, a:hover, a:visited {
+  cursor: pointer;
+  color: #000;
+}
+
+/* .header-ctn {
+	background-color: #CC232A;
+}
+
+#bitcoincom-uc-navbar .eKHLOi a {
+	color: rgb(19, 23, 32) !important;
+} */
+
+/* #bitcoincom-uc-navbar .sticky-inner-wrapper div {
+	background-color: #A3262A !important;
+} */
+
+#bitcoincom-uc-footer footer {
+	background-color: #b90000 !important;
+}
+
+.section-1 {
+	background-color: #b90000;
+	/* background-color: #fbfcff; */
+    padding: 100px 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	position: relative;
+}
+
+.align-middle-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.section-1 h1 {
+	margin: 0 0 10px 0;
+	display: block;
+}
+
+.section-1 p {
+	margin: 0 0 20px 0;
+}
+
+.header-img {
+	text-align: center;
+	padding-left: 100px;
+}
+
+.header-img2 {
+	text-align: center;
+	padding-right: 100px;
+}
+
+.rat {
+	width: 100%;
+}
+
+.year {
+	width: 400px;
+}
+
+.learn-more-link {
+	font-weight: 700; 
+	color: #000!important;
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+.section-ad {
+	text-align: center;
+	background-color: #E5E8F0;
+	padding: 20px 0;
+}
+
+.ad {
+	width: 920px;
+	text-align: center;
+	display: inline-block;
+}
+
+.section-2 {
+	background-color: #fbfcff;
+    padding: 100px 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left;
+	position: relative;
+}
+
+.section-2 h2, .section-2 p {
+	color: #000;
+}
+
+.section-3 {
+	background-color: #E5E8F0;
+    padding: 100px 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.howtoicon {
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+.section-3 h2, .section-3 p, .section-3 h3 {
+	color: #000;
+}
+
+.section-3 h2 {
+	margin-bottom: 60px;
+}
+
+.section-3 h3 {
+	margin-bottom: 20px;
+}
+
+.section-4 {
+	background-color: #fbfcff;
+    padding: 100px 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left;
+	position: relative;
+}
+
+.section-4 h2, .section-4 p {
+	color: #000;
+}
+
+.section-4 p {
+	margin-bottom: 30px;
+}
+
+.section-5 {
+	background-color: #b90000;
+    padding: 100px 0;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.btn-primary{
+  	font-family: 'Gilroy', sans-serif;
+	font-weight: 700; 
+	color: #000!important;
+	text-shadow: none!important;
+	-webkit-text-shadow: none!important;
+	padding-left: 28px!important;
+	padding-right: 28px!important;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 3px !important;
+	background: #fce91c; 
+  	transition: all 300ms ease-in-out 0s;
+	height: 50px;
+	min-width: 140px;
+	line-height: 50px;
+	padding-top: 0;
+	padding-bottom: 0;
+	border: none;
+}
+
+.btn-primary:hover {  
+  background: #fced4a;
+  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+.btn-primary:active {
+  background: #f6ea6f;
+}
+
+body #universal-footer {
+	margin-top: 0 !important;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 24px;
+  }
+
+  .switch-ctn {
+	top: 20px;
+	right: 50px;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+  }
+
+  .lang-switch {
+	  display: inline-block;
+	  font-size: 12px;
+	  color: #000;
+	  margin: 0;
+	  margin-right: 10px;
+  }
+  .lang-switch:last-child {
+	margin-left: 10px;
+	margin-right: 0;
+}
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* The slider */
+
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #770000;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #770000;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #000;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(16px);
+	-ms-transform: translateX(16px);
+	transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+  body .container .english {
+	display: none;
+}
+
+
+
+/***********************************************************************************   START MEDIA    **************************************************************************************/
+
+
+
+@media (max-width: 992px) {
+	.align-middle-flex {
+		flex-direction: column;
+	}
+
+}
+
+@media (max-width: 768px) {
+   h1 {
+		font-size: 50px;
+	}
+
+	h2 {
+		font-size: 30px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+}
+
+
+
+
+
+
