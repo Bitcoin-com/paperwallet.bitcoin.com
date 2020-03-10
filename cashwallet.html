@@ -6616,8 +6616,8 @@ input[type=checkbox] { position: relative; z-index: 20; }
   .bip-encrypted {
     font-family: 'Gilroy', sans-serif;
     padding: 2px 0px;
-    background-color: #000;
-    color: #0fcb97;
+    /* background-color: #000;
+    color: #0fcb97; */
     font-weight: 400;
     font-size: 9px;
     text-align: center;
@@ -6901,6 +6901,26 @@ input[type=checkbox] { position: relative; z-index: 20; }
 		-ms-transform-origin:top left;     -ms-transform:rotate(180deg);
 		-o-transform-origin:top left;      -o-transform:rotate(180deg);
 		transform-origin:top left;         transform:rotate(180deg);
+  }
+
+  .lock-art {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .bip-encrypted {
+    font-family: 'Gilroy', sans-serif;
+    padding: 2px 0px;
+    background-color: #000;
+    /* color: #0fcb97; */
+    font-weight: 400;
+    font-size: 9px;
+    text-align: center;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    top: 40px;
   }
 
 }
@@ -10787,6 +10807,7 @@ ninja.wallets.paperwallet = {
     case 'default':
       //file resource version: 
       image = 'img/2019-paper-wallet-dark-blue.png';
+	  lockArtBgColor='#fff;'  
       //base64 encoded version:
       break;
 
