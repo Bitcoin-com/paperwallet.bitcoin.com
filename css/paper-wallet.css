@@ -84,7 +84,7 @@ p {
 	text-align: center;
 }
 
-a, a:hover, a:visited {
+a:not(.huHZfR, .dNInsD), a:hover:not(.huHZfR, .dNInsD), a:visited:not(.huHZfR, .dNInsD) {
   cursor: pointer;
   color: #0fcb97;
 }
