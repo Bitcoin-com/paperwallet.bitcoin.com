@@ -67,9 +67,19 @@ ul {
 	padding-inline-start: 20px;
 }
 
-a, a:hover:not(.huHZfR), a:visited:not(.huHZfR) {
+a:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:hover:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:visited:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a) {
   cursor: pointer;
   color: #b90000;
+}
+
+#bitcoincom-wgt-footer a:hover{
+	text-decoration: none;
+	color: rgb(251, 252, 255)
+}
+
+#bitcoincom-wgt-navbar a:hover {
+	text-decoration: none;
+	color: rgb(19, 23, 32);
 }
 
 /* .header-ctn {
