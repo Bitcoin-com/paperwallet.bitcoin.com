@@ -67,7 +67,7 @@ ul {
 	padding-inline-start: 20px;
 }
 
-a, a:hover:not(.huHZfR, .dNInsD), a:visited:not(.huHZfR, .dNInsD) {
+a:not(.huHZfR, .dNInsD), a:hover:not(.huHZfR, .dNInsD), a:visited:not(.huHZfR, .dNInsD) {
   cursor: pointer;
   color: #b90000;
 }

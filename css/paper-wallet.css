@@ -89,6 +89,16 @@ a:not(.huHZfR, .dNInsD), a:hover:not(.huHZfR, .dNInsD), a:visited:not(.huHZfR, .
   color: #0fcb97;
 }
 
+.huHZfR:hover{
+	text-decoration: none;
+	color: rgb(251, 252, 255)
+}
+
+.dNInsD:hover {
+	text-decoration: none;
+	color: rgb(19, 23, 32);
+}
+
 .section-1 {
 	background-color: #111724;
 	background-repeat: no-repeat;
