@@ -67,7 +67,7 @@ ul {
 	padding-inline-start: 20px;
 }
 
-a, a:hover, a:visited {
+a, a:hover:not(.huHZfR), a:visited:not(.huHZfR) {
   cursor: pointer;
   color: #b90000;
 }
