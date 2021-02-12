@@ -84,17 +84,17 @@ p {
 	text-align: center;
 }
 
-a:not(.huHZfR, .dNInsD), a:hover:not(.huHZfR, .dNInsD), a:visited:not(.huHZfR, .dNInsD) {
+a:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:hover:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:visited:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a) {
   cursor: pointer;
   color: #0fcb97;
 }
 
-.huHZfR:hover{
+#bitcoincom-wgt-footer a:hover{
 	text-decoration: none;
 	color: rgb(251, 252, 255)
 }
 
-.dNInsD:hover {
+#bitcoincom-wgt-navbar a:hover {
 	text-decoration: none;
 	color: rgb(19, 23, 32);
 }
