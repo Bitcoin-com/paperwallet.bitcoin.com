@@ -7,12 +7,12 @@ bitcoin.com paper wallet style sheet
 ******************************************************************************************************************************************************/
 
 body {
-	font-family: 'Gilroy', sans-serif;
-	background-color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x:hidden;
-	 width: 100%;
+	width: 100%;
+	background-color: #F1F7FD;
 }
 
 .container {
@@ -21,16 +21,14 @@ body {
 }
 
 h1 {
-	font-family: 'Gilroy', sans-serif;
-	font-size: 65px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 65px;
 	font-weight: 700; 
 	color: #fff;
 	margin: 0;
 }
 
 h2 {
-	font-family: 'Gilroy', sans-serif;
-	font-size: 36px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
 	margin: 0;
@@ -51,16 +49,14 @@ h2:after {
 */
 
 h3 {
-	font-family: 'Gilroy', sans-serif;
-	font-size: 22px;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 22px;
 	font-weight: 600; 
-	color: #0fcb97;
+	color: #2793FF;
 	margin: 0;
 }
 
 p {
-	font-family: 'Gilroy', sans-serif;
-	font-size: 17px;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 17px;
 	font-weight: 400; 
 	color: #444;
 	margin: 0;
@@ -86,12 +82,18 @@ p {
 
 a:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:hover:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:visited:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a) {
   cursor: pointer;
-  color: #0fcb97;
+	color: #2793FF;
+	font-weight: 700;
 }
 
 #bitcoincom-wgt-footer a:hover{
 	text-decoration: none;
-	color: rgb(251, 252, 255)
+	color:rgb(19, 23, 32);
+}
+
+#bitcoincom-wgt-navbar svg {
+	width: 22px;
+	color: #2D323B;
 }
 
 #bitcoincom-wgt-navbar a:hover {
@@ -123,32 +125,39 @@ a:not(#bitcoincom-wgt-footer a, #bitcoincom-wgt-navbar a), a:hover:not(#bitcoinc
 }
 
 .btn-primary{
-  font-family: 'Gilroy', sans-serif;
-	font-weight: 700; 
 	color: #fff!important;
 	text-shadow: none!important;
 	-webkit-text-shadow: none!important;
-	padding-left: 28px!important;
-	padding-right: 28px!important;
-	font-size: 18px;
 	text-align: center;
-	border-radius: 3px !important;
-	background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFGSURBVDgRjZPrccQgEIOBcQvpf9JU2nH0STqM8yuY4dZaaV/45tfP9z3GPRYHe41b58TglH1x6ncsjqlnyaF1jwsuS2StqARpG4HnOLeIMoTDeavgQAQ9VdClQuqkogTBINRfskoNuQHHVKniObTJzv7KhbcpGtAIR2pWjCAt2mQjFBWXTpOpd5LUDgncKRWscmV84iCFp8Jmc9EUSClp0AhEUMeJSm+ZD0n1uEEjKAilXDLETu8g+PH1BpkPAAg/sBcdp3e7UImUpCGJvDlY2tfuq6JPimbPfIjj+SRH7ouYzY6Rgk6k5Me1U7Sc5AJ1HErtl+m+/jEfJFG10wDMx47XfIT0uu1LzQiOLuBkqokklyJpZ+AC+5FU9b7KfFr+fyX/GXkjO7ILOrJTHZfyqKACGuHlchRBnqovRWj6wmA98rwfyC/Ypqs3+134cwAAAABJRU5ErkJggg=="); 
-  transition: all 300ms ease-in-out 0s;
-	height: 50px;
-	min-width: 140px;
-	line-height: 50px;
-	padding-top: 0;
-	padding-bottom: 0;
-	border: none;
+	transition: all 300ms ease-in-out 0s;
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: transparent;
+  text-decoration: none;
+	padding: 17px 38px;
+	font-size: 20px;
+	line-height: 22px;
+	background-color: #2793FF;
+	font-weight: 700;
+  box-shadow: 0px 20px 87px rgba(45, 50, 59, 0.02),
+    0px 10px 38px rgba(45, 50, 59, 0.03),
+    0px 4px 14px rgba(45, 50, 59, 0.05),
+    0px 1px 5px rgba(45, 50, 59, 0.08);
 }
 
 .btn-primary:hover {  
-  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAE5SURBVDgRbZNZcsAgDEMhk2P0/mfowfpP9Z4hywRPJhgvkgxJ//n7HS12jpY1z8GrdRzMCOsYpEbrva9UIoSpT3GnqZ20JFg1xMSp9uQxu3To0PEtRQXSFQywLb5xiDyKo6co+l0crx0XMsxYdeGQ+uohOpGnI3ui2gkqio4aOHMVxcjIl9R4ng+i4D2/7MaDdOtJ7dSTDmVsuuDmfIo07SWH04DodSkKTTBHZ2Z2ZVN6giG7XMxE3TOC+IWM1K8eZVgTZkwZganiiYzmiYznnTLh4ZikCvk1FyDg1BIHMPV48gICKw5FRqyGQmi+Q2piG/GEa8A4SpUim+19Uf7Uw262XxQThxSmeGtAJrlDNoXUdQWOxVXald276/sXKB6Y0lNydiM74DooNu//nUucmtekYd98WvBg/0Hyy0dGEw7mAAAAAElFTkSuQmCC");
-  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+	background-color: #2793FF;
+  border:none;
+  box-shadow: 0px 6px 6px rgba(0, 123, 255, 0.2),
+		0px 8px 10px rgba(0, 125, 255, 0.25);
 }
 .btn-primary:active {
-  background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAB4CAYAAADYDyODAAABYWlDQ1BrQ0dDb2xvclNwYWNlRGlzcGxheVAzAAAokWNgYFJJLCjIYWFgYMjNKykKcndSiIiMUmB/yMAOhLwMYgwKicnFBY4BAT5AJQwwGhV8u8bACKIv64LMOiU1tUm1XsDXYqbw1YuvRJsw1aMArpTU4mQg/QeIU5MLikoYGBhTgGzl8pICELsDyBYpAjoKyJ4DYqdD2BtA7CQI+whYTUiQM5B9A8hWSM5IBJrB+API1klCEk9HYkPtBQFul8zigpzESoUAYwKuJQOUpFaUgGjn/ILKosz0jBIFR2AopSp45iXr6SgYGRiaMzCAwhyi+nMgOCwZxc4gxJrvMzDY7v////9uhJjXfgaGjUCdXDsRYhoWDAyC3AwMJ3YWJBYlgoWYgZgpLY2B4dNyBgbeSAYG4QtAPdHFacZGYHlGHicGBtZ7//9/VmNgYJ/MwPB3wv//vxf9//93MVDzHQaGA3kAFSFl7jXH0fsAAAFMSURBVDgRlZJRbsMwDENtI9i9d6SdMOUj6SYp+jOjcB2JpCjZ8+fv9xxai+08z7HY5pxjzTEJKsU/qSGoU0SgOXJhHOFTy4JISAcw9K4F1SkHlDeGEof0HTysH5arQk/qix9I9iMJL2OAXw4jLD/o1I86BRNSrRKKVfzQLukjyu6i83n48ehAZnTIXizR2xbjTWo9/GBfRZNLdfnIIX60i5renTJ2syQmcKo+58NAy5KNVmDOtbEjnZiH0PnUKcoMavsR0W8jM5ROUkI7wvbxfsTIfHR4vx/q/88PDFaeqP3sLrDgVP/lue5tnuhtPiCVVgQ/tKMNfG8ZY4rod9fhU7Fb7/4WhuaSMsbKOfWWjYHuVIv6c9tAoH4oYbae334tR4vvtypwML4UJf02UNRZvdfP1YVOLgELLc/HEUNhEX6PxSkCt/vSY7Owci/2BnNqlHfFbgAAAABJRU5ErkJggg==");
+	border:none;
+	background-color: #2793FF;
+  box-shadow: 0px 6px 6px rgba(0, 123, 255, 0.2),
+    0px 8px 10px rgba(0, 125, 255, 0.25);
 }
 
 .section-2 {
@@ -182,8 +191,8 @@ svg.page-hero-shape {
 .section-security {
 	padding: 50px 0 50px 0;
 	background-color: #000;
-	border-top: 15px solid #0fcb97;
-	border-bottom: 15px solid #0fcb97;
+	border-top: 15px solid #2793FF;
+	border-bottom: 15px solid #2793FF;
 	background-color: #111724;
 }
 
@@ -304,8 +313,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 .featured-section h4 {
 	background-color: #f80824;
-	font-family: 'Gilroy', sans-serif;
-	font-size: 10px;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 10px;
 	font-weight: 700; 
 	color: #fff;
 	margin: 0;
@@ -323,8 +331,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAN0lEQVQYV2
 
 
 .featured-section h5 {
-	font-family: 'Gilroy', sans-serif;
-	font-size: 36px;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;	font-size: 36px;
 	font-weight: 700; 
 	color: #444;
 	margin: 0;
